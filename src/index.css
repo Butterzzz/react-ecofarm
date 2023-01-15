@@ -1,5 +1,9 @@
 @import url(./vendor/normalize.css);
 
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --transition: all 400ms ease;
 }

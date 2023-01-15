@@ -1,3 +1,7 @@
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     outline: 1px solid lightsteelblue;
+    padding: 18px 70px;
 }
