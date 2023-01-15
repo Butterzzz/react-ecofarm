@@ -4,7 +4,7 @@ import './Order.css'
 const Order = () => {
     return (
         <section className="order" id="order">
-            <h2 className="order__title">Отзывы</h2>
+            <h2 className="order__title">Как заказать</h2>
         </section>
     )
 }
