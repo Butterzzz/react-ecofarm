@@ -11,3 +11,9 @@
     line-height: 20px;
     color: #8B8B8B;
 }
+
+.active {
+    font-weight: 500;
+    color: #000;
+    cursor: default;
+}

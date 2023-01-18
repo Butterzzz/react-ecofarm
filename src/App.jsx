@@ -1,15 +1,21 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header/Header'
+import Layout from './components/Layout/Layout'
 import Main from './components/Main/Main'
-import Footer from './components/Footer/Footer'
+import Catalog from './components/Catalog/Catalog'
+import NotFound from './components/NotFound/NotFound'
 
 const App = () => {
   return (
     <div className="page">
-      <Header />
-      <Main />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="catalog" element={<Catalog />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
+      </Routes>
     </div>
   )
 }
