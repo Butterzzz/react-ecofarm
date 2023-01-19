@@ -6,6 +6,7 @@ import Main from './components/Main/Main'
 import Catalog from './components/Catalog/Catalog'
 import NotFound from './components/NotFound/NotFound'
 
+
 const App = () => {
   return (
     <div className="page">
