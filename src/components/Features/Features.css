@@ -1,0 +1,14 @@
+.features {
+    outline: 1px solid sienna;
+    margin-bottom: 100px;
+}
+
+.features__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

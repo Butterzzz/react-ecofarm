@@ -2,16 +2,6 @@
     outline: 1px solid forestgreen;
 }
 
-.contacts__title {
-    font-size: 32px;
-    line-height: 35px;
-    font-style: normal;
-    font-weight: 700;
-    text-align: center;
-    color: var(--title-color);
-    margin: 0 0 20px 0;
-}
-
 .contacts__subtitle {
     font-style: italic;
     text-align: center;

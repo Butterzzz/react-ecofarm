@@ -4,7 +4,7 @@ import './Reviews.css'
 const Reviews = () => {
     return (
         <section className="reviews" id="reviews">
-            <h2 className="reviews__title">Отзывы</h2>
+            <h2 className="reviews__title section-title">Отзывы</h2>
         </section>
     )
 }
