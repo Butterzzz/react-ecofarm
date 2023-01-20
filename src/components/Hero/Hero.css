@@ -1,0 +1,129 @@
+.hero {
+    outline: 1px solid firebrick;
+    background-color: transparent;
+    margin-bottom: 100px;
+  }
+  
+  .hero__container {
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 75px 70px;
+    background-color: transparent;
+  }
+  
+  .hero__content {
+    max-width: 640px;
+  }
+  
+  .hero__title {
+    font-size: 50px;
+    line-height: 58px;
+    font-weight: 400;
+    color: var(--main--title);
+    margin: 0;
+    padding: 0 0 36px 0;
+  }
+  
+  .hero__subtitle {
+    width: 310px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: var(--main--title);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    margin: 0;
+    padding: 0 0 146px 0;
+  }
+
+  .hero__button-container {
+    display: flex;
+    column-gap: 10px;
+  }
+  
+  .hero__button {
+    width: 150px;
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #FFF;
+    background-color: var(--main-green);
+    padding: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-sizing: border-box;
+  }
+  
+  .hero__image {
+    width: 585px;
+    height: 450px;
+  }
+  
+  /* @media screen and (max-width: 880px) {
+    .hero__container {
+      flex-direction: column;
+      align-items: center;
+      padding: 140px 44px 76px;
+      row-gap: 48px;
+    }
+  
+    .hero__content {
+      order: 1;
+      max-width: 680px;
+    }
+  
+    .hero__title {
+      text-align: center;
+      font-size: 40px;
+      line-height: 50px;
+      padding: 0 0 22px 0;
+    }
+  
+    .hero__subtitle {
+      width: 260px;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 0 92px 0;
+    }
+  
+    .hero__button {
+      margin: 0 auto;
+    }
+  
+    .hero__link {
+      margin: 0 auto;
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    .hero__container {
+      padding: 70px 10px 30px;
+      row-gap: 44px;
+    }
+  
+    .hero__content {
+      max-width: 300px;
+    }
+  
+    .hero__title {
+      font-size: 30px;
+      line-height: 38px;
+      letter-spacing: -0.04em;
+      padding: 0 0 24px 0;
+    }
+  
+    .hero__subtitle {
+      padding: 0 0 80px 0;
+    }
+  
+    .hero__image {
+      width: 210px;
+      height: 206px;
+    }
+  } */
