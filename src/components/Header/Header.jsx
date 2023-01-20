@@ -6,8 +6,10 @@ import Navigation from '../../components/Navigation/Navigation'
 const Header = () => {
     return (
         <header className="header">
-            <Logo />
-            <Navigation />
+            <div className="header__conatiner">
+                <Logo />
+                <Navigation />
+            </div>
         </header>
     )
 }

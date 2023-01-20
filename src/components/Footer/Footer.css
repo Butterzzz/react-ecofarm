@@ -1,6 +1,10 @@
 .footer {
-    outline: 1px solid lightgreen;
     background-color: #202020;
+}
+
+.footer__container {
+    max-width: 1280px;
+    margin: 0 auto;
     flex: 0 0 auto;
     padding: 70px;
 }

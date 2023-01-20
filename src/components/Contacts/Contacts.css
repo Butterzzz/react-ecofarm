@@ -3,11 +3,17 @@
 }
 
 .contacts__title {
+    font-size: 32px;
+    line-height: 35px;
+    font-style: normal;
+    font-weight: 700;
     text-align: center;
+    color: var(--title-color);
     margin: 0 0 20px 0;
 }
 
 .contacts__subtitle {
+    font-style: italic;
     text-align: center;
     margin: 0 0 80px 0;
 }
@@ -65,7 +71,7 @@
 .contacts__form-button {
     width: 100%;
     border: none;
-    background-color: #9DD558;
+    background-color: var(--main-green);
     border-radius: 20px;
     font-weight: 500;
     font-size: 16px;

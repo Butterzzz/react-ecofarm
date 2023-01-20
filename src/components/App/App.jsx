@@ -1,10 +1,10 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import './App.css'
-import Layout from './components/Layout/Layout'
-import Main from './components/Main/Main'
-import Catalog from './components/Catalog/Catalog'
-import NotFound from './components/NotFound/NotFound'
+import Layout from '../Layout/Layout'
+import Main from '../Main/Main'
+import Catalog from '../Catalog/Catalog'
+import NotFound from '../NotFound/NotFound'
 
 
 const App = () => {

@@ -1,7 +1,12 @@
 .header {
+    background-color: #EAEAEA;
+}
+
+.header__conatiner {
+    max-width: 1280px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    outline: 1px solid lightsteelblue;
     padding: 18px 70px;
 }
