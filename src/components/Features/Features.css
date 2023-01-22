@@ -4,9 +4,9 @@
 }
 
 .features__list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
     text-align: center;
     list-style-type: none;
     margin: 0;
