@@ -18,7 +18,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
-    color: #333333;
+    color: var(--title-color);
     margin: 0;
 }
 
@@ -26,6 +26,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 16px;
-    color: #4e4e4e;
+    color: var(--title-color);
+    opacity: 0.8;
     margin: 0;
 }

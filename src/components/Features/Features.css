@@ -1,6 +1,6 @@
 .features {
     outline: 1px solid sienna;
-    margin-bottom: 100px;
+    padding: 60px 0;
 }
 
 .features__list {
@@ -11,4 +11,24 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.features__icon {
+    font-size: 50px;
+    color: var(--main-green);
+    margin: 0 0 20px 0;
+}
+
+.features__caption {
+    color: var(--title-color);
+    margin: 0 0 10px 0;
+}
+
+.features__text {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--title-color);
+    opacity: 0.6;
+    margin: 0;
 }

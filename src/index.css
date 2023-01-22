@@ -7,8 +7,9 @@
 
 :root {
   --transition: all 400ms ease;
-  --title-color: #333333;
+  --title-color: #333;
   --main-green: #22B742;
+  --border-radius: 8px;
 }
 
 html {

@@ -13,7 +13,7 @@ const Hero = () => {
                     <p className="hero__subtitle">Свежая микрозелень с доставкой по всему городу</p>
                     <div className="hero__button-container">
                         <Link to="catalog" className="hero__button button">Каталог</Link>
-                        <button className="hero__button button"><AiFillPlayCircle /> О производстве</button>
+                        <button className="hero__button button"><AiFillPlayCircle className="hero__button_icon"/> О производстве</button>
                     </div>
                 </div>
                 <img className="hero__image" src={promoImg} alt="Микрозелень" />
