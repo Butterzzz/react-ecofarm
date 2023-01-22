@@ -8,6 +8,11 @@ const CardList = () => {
     <section className="cards" aria-label="Карточки">
       <ul className="cards__list">
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
         {/* {cardsList.map((card) => (
           <Card
             key={card._id}
