@@ -37,3 +37,9 @@
     color: var(--title-color);
     margin: 0 0 50px 0;
 }
+
+.react-icons {
+    vertical-align: middle;
+    font-size: 20px;
+    color: #FFF;
+}
