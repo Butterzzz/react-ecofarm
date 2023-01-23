@@ -3,13 +3,6 @@
     padding: 100px 0;
 }
 
-.contacts__subtitle {
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-    padding: 0 0 80px 0;
-}
-
 .contacts__wrapper {    
     display: flex;
     justify-content: center;
@@ -73,3 +66,17 @@
     color: #FFFFFF;
     padding: 18px;
 }
+
+.contacts__form-error {
+    color: red;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .3s linear, opacity .3s linear;
+}
+
+.contacts__form-error_show {
+    visibility: visible;
+    opacity: 1;
+  }
+  

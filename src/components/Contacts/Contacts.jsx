@@ -1,11 +1,38 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import './Contacts.css'
+import emailjs from '@emailjs/browser'
 
 const Contacts = () => {
+
+  const form = useRef();
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isShowError, setIsShowError] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      'service_cbnrrw8',
+      'template_tailgcj', form.current,
+      'l2YmhnffqhU2B23A0'
+    )
+      .then((result) => {
+        e.target.reset()
+        setIsSuccess(true);
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsSuccess(false);
+      })
+      .finally(() => {
+        setIsShowError(true)
+      });
+  }
+
   return (
     <section className="contacts" id="contacts">
       <h2 className="contacts__title section-title">Контакты</h2>
-      <p className="contacts__subtitle">Смело пишите и звоните нам. Мы очень любим общаться с нашими клиентами.</p>
+      <p className="contacts__subtitle section-subtitle">Смело пишите и звоните нам. Мы очень любим общаться с нашими клиентами</p>
 
       <div className="contacts__wrapper">
 
@@ -15,32 +42,39 @@ const Contacts = () => {
           <address className="contacts__address">Благовещенск,  ул. Амурская 24</address>
         </div>
 
-        <form className="contacts__form">
+        <form className="contacts__form" ref={form} onSubmit={sendEmail}>
           <div className="contacts__form-div">
             <input
               className="contacts__form-input"
               type="text"
               name="name"
-              placeholder="Ваше имя" />
+              placeholder="Ваше имя"
+              minLength="2" maxLength="40"
+              required />
           </div>
           <div className="contacts__form-div">
             <input
               className="contacts__form-input"
               type="email"
               name="email"
-              placeholder="Ваш email" />
+              placeholder="Ваш email"
+              required />
           </div>
           <div className="contacts__form-div contacts__form-area">
             <textarea
               className="contacts__form-input"
               name="message"
               rows="5"
-              placeholder="Ваше сообщение">
+              placeholder="Ваше сообщение"
+              minLength="2" maxLength="300"
+              required >
             </textarea>
           </div>
           <button type="submit" className="contacts__form-button button">Отправить</button>
-        </form>
 
+          <p className={`contacts__form-error ${isShowError && 'contacts__form-error_show'}`}>{isSuccess ? 'Успешно' : 'Провал'}</p>
+
+        </form>
       </div>
     </section>
   )
