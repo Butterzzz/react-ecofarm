@@ -1,7 +1,6 @@
 import React from 'react'
 import './Features.css'
-import { CiTempHigh } from 'react-icons/ci'
-import { GiEcology, GiHandTruck } from 'react-icons/gi'
+import { GiEcology, GiGreenhouse, GiHandTruck } from 'react-icons/gi'
 
 const Features = () => {
     return (
@@ -14,7 +13,7 @@ const Features = () => {
                     <p class="features__text">Микрозелень выращивается только из органических семян без удобрений и нитратов</p>
                 </li>
                 <li class="features__item">
-                    <CiTempHigh className="features__icon" />
+                    <GiGreenhouse className="features__icon" />
                     <h3 class="features__caption">Доступность весь год</h3>
                     <p class="features__text">Выращиваем и доставляем микрозелень 365 дней в году</p>
                 </li>
