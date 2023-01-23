@@ -8,10 +8,10 @@ import Hero from '../Hero/Hero'
 import Features from '../Features/Features'
 // import Slider from '../Slider/Slider'
 
-const Main = () => {
+const Main = ({ onClickAbout }) => {
   return (
     <>
-      <Hero />
+      <Hero onClickAbout={onClickAbout}/>
       <Features />
       {/* <Slider /> */}
       <Order />

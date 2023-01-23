@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Hero.css'
 import promoImg from '../../images/promo.jpg'
-import { AiFillPlayCircle } from 'react-icons/ai'
+import { BsPlayCircle} from 'react-icons/bs'
 
-const Hero = () => {
+const Hero = ({ onClickAbout }) => {
     return (
         <section className="hero">
             <div className="hero__container">
@@ -13,7 +13,10 @@ const Hero = () => {
                     <p className="hero__subtitle">Свежая микрозелень с доставкой по всему городу</p>
                     <div className="hero__button-container">
                         <Link to="catalog" className="hero__button button">Каталог</Link>
-                        <button className="hero__button button"><AiFillPlayCircle className="hero__button_icon"/> О производстве</button>
+                        <button className="hero__button button" onClick={onClickAbout}>
+                            <BsPlayCircle className="hero__button_icon" />
+                            О производстве
+                        </button>
                     </div>
                 </div>
                 <img className="hero__image" src={promoImg} alt="Микрозелень" />
