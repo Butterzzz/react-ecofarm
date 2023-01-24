@@ -1,16 +1,22 @@
 import React, { useRef, useState } from 'react'
 import './Contacts.css'
 import emailjs from '@emailjs/browser'
+import { GrFormClose } from 'react-icons/gr'
 
 const Contacts = () => {
 
   const form = useRef();
   const [isSuccess, setIsSuccess] = useState(false);
   const [isShowError, setIsShowError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  function handleHideError() {
+    setIsShowError(false);
+  }
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setIsLoading(true);
     emailjs.sendForm(
       'service_cbnrrw8',
       'template_tailgcj', form.current,
@@ -25,7 +31,8 @@ const Contacts = () => {
         setIsSuccess(false);
       })
       .finally(() => {
-        setIsShowError(true)
+        setIsShowError(true);
+        setIsLoading(false);
       });
   }
 
@@ -70,9 +77,12 @@ const Contacts = () => {
               required >
             </textarea>
           </div>
-          <button type="submit" className="contacts__form-button button">Отправить</button>
+          <button type="submit" className="contacts__form-button button" disabled={isLoading}>{isLoading ? 'Отправляем...' : 'Отправить'}</button>
 
-          <p className={`contacts__form-error ${isShowError && 'contacts__form-error_show'}`}>{isSuccess ? 'Успешно' : 'Провал'}</p>
+          <div className={`contacts__form-error ${isSuccess && 'contacts__form-error_green'} ${isShowError && 'contacts__form-error_show'}`}>
+            <p className="contacts__form-error_text">{isSuccess ? 'Сообщение успешно отправлено' : 'Что-то пошло не так. Попробуйте еще раз'}</p>
+            <GrFormClose type="button" className="contacts__form-error_close" onClick={handleHideError} />
+          </div>
 
         </form>
       </div>
