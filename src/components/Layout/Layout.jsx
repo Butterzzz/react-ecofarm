@@ -12,7 +12,7 @@ const Layout = () => {
             <main className="content">
                 <Outlet />
             </main>
-
+            
             <Footer />
         </>
     )

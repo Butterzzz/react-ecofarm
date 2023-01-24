@@ -1,11 +1,12 @@
 import React from 'react'
 import './Main.css'
-import Order from '../Order/Order'
-import Blog from '../Blog/Blog'
-import Contacts from '../Contacts/Contacts'
-import Reviews from '../Reviews/Reviews'
 import Hero from '../Hero/Hero'
 import Features from '../Features/Features'
+import Order from '../Order/Order'
+import Blog from '../Blog/Blog'
+import Reviews from '../Reviews/Reviews'
+import Contacts from '../Contacts/Contacts'
+import Map from '../Map/Map'
 // import Slider from '../Slider/Slider'
 
 const Main = ({ onClickAbout }) => {
@@ -18,6 +19,7 @@ const Main = ({ onClickAbout }) => {
       <Blog />
       <Reviews />
       <Contacts />
+      <Map />
     </>
   )
 }

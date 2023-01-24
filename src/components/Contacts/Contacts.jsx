@@ -97,7 +97,6 @@ const Contacts = () => {
             Написать в Telegram
           </a>
 
-          <address className="contacts__address">Благовещенск, ул. Амурская 24</address>
         </div>
 
         <form className="contacts__form" ref={form} onSubmit={sendEmail}>

@@ -1,6 +1,6 @@
 .contacts {
     outline: 1px solid forestgreen;
-    padding: 100px 0;
+    padding: 100px 0 50px;
 }
 
 .contacts__wrapper {
@@ -33,6 +33,7 @@
     padding: 10px 30px;
     border-radius: var(--border-radius);
     text-decoration: none;
+    cursor: pointer;
 }
 
 .contacts__link p {
@@ -101,10 +102,9 @@
     color: var(--title-color);
 }
 
-
-
 .contacts__form {
     width: 400px;
+    max-height: 450px;
 }
 
 .contacts__form-div {

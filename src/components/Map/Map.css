@@ -1,0 +1,25 @@
+.map {
+    position: relative;
+    outline: 1px solid darkmagenta;
+}
+
+.map__info {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    background-color: #fff;
+    opacity: .9;
+    border-radius: var(--border-radius);
+    padding: 30px;
+}
+
+.map__title {
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0 0 15px 0;
+}
+
+.map__address {
+    color: var(--title-color);
+}
