@@ -2,6 +2,10 @@ import React, { useRef, useState } from 'react'
 import './Contacts.css'
 import emailjs from '@emailjs/browser'
 import { GrFormClose } from 'react-icons/gr'
+import { BsWhatsapp } from 'react-icons/bs'
+import { BsTelegram } from 'react-icons/bs'
+import { RiMailSendLine } from 'react-icons/ri'
+import { FiPhoneForwarded } from 'react-icons/fi'
 
 const Contacts = () => {
 
@@ -44,9 +48,56 @@ const Contacts = () => {
       <div className="contacts__wrapper">
 
         <div className="contacts__info">
-          <a className="contacts__phone link" href="tel:+7 (914) 615-71-99">+7 (914) 615-71-99</a>
-          <a className="contacts__email link" href="mailto:ecofarm@mail.ru">ecofarm@mail.ru</a>
-          <address className="contacts__address">Благовещенск,  ул. Амурская 24</address>
+
+          <a
+            className="contacts__link contacts__link_phone"
+            href="tel:+7 (914) 615-71-99"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Позвонить"
+          >
+            <FiPhoneForwarded className="contacts__link-icon contacts__link-icon_black" />
+            <p>
+              Позвонить<br /><span>+7 (914) 615-71-99</span>
+            </p>
+          </a>
+
+          <a
+            className="contacts__link contacts__link_email"
+            href="mailto:ecofarm@mail.ru"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать Email"
+          >
+            <RiMailSendLine className="contacts__link-icon contacts__link-icon_black" />
+            <p>
+              Написать Email <br /><span>ecofarm@mail.ru</span>
+            </p>
+          </a>
+
+          <a
+            className="contacts__link contacts__link_whatsapp"
+            href="https://wa.me/79146157199?text=Здравствуйте!%20Интересует%20ваша%20микрозелень"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать в WhatsApp"
+          >
+            <BsWhatsapp className="contacts__link-icon" />
+            Написать в WhatsApp
+          </a>
+
+          <a
+            className="contacts__link contacts__link_telegram"
+            href="https://t.me/Above_Everything"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Написать в Telegram"
+          >
+            <BsTelegram className="contacts__link-icon" />
+            Написать в Telegram
+          </a>
+
+          <address className="contacts__address">Благовещенск, ул. Амурская 24</address>
         </div>
 
         <form className="contacts__form" ref={form} onSubmit={sendEmail}>
