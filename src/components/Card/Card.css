@@ -19,6 +19,11 @@
 }
 
 .card__description {
+    max-width: 360px;
+    max-height: 70px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-weight: 300;
     font-size: 14px;
     line-height: 22px;
