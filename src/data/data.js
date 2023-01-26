@@ -20,7 +20,7 @@ const cards =[
     {
       "id": "01GQJPGWDXNM6N3AN4KFXWQ3F0",
       "image": "http://dummyimage.com/360x400.png/dddddd/000000",
-      "title": "Argythamnia brandegeei Millsp. var. intonsa (I.M. Johnst.) J.W. Ingram ex L.C. Wheeler",
+      "title": "Рыба",
       "about": "Legal intervnt w unsp gas, law enforc offl injured, sequela",
       "price": "$7.64",
       "discount": "$1.24",
@@ -31,7 +31,7 @@ const cards =[
     {
       "id": "01GQJPGWE0JH59AXCKZREWRRDK",
       "image": "http://dummyimage.com/360x400.png/5fa2dd/ffffff",
-      "title": "Hypericum edisonianum (Small) P. Adams & N. Robson",
+      "title": "Мука",
       "about": "Vanadium deficiency",
       "price": "$9.81",
       "discount": "$4.99",

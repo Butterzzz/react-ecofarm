@@ -10,3 +10,14 @@
     margin: 0;
     padding: 0;
 }
+
+.cardlist__errors {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .cardlist__errors_type_hidden {
+    display: none;
+  }
+  
