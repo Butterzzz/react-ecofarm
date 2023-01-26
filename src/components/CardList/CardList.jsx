@@ -1,25 +1,22 @@
 import React from 'react'
 import './CardList.css'
 import Card from '../Card/Card'
-// import cardsList from '../../data/cards'
+import { cards } from '../../data/data'
 
 const CardList = () => {
+  // const newCard = cards.filter(item => item.new === true);
+  // console.log(newCard);
+  
   return (
     <section className="cards" aria-label="Карточки">
       <ul className="cards__list">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        {/* {cardsList.map((card) => (
+        {cards.map((card) => (
           <Card
-            key={card._id}
+            key={card.id}
             card={card}
           />
         ))
-        } */}
+        }
       </ul>
     </section>
   )

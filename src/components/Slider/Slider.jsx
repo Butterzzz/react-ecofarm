@@ -8,7 +8,7 @@ import 'swiper/css'
 // import 'swiper/css/pagination'
 // import 'swiper/css/navigation'
 
-import sliderImages from '../../data/data'
+import { sliderImages } from '../../data/data'
 
 const Slider = () => {
     return (
