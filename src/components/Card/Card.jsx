@@ -1,12 +1,15 @@
 import React from 'react'
 import './Card.css'
-// import CardImage from './../../images/catalog01.jpg'
 
 const Card = ({ card }) => {
     return (
         <li className="cards__list-item">
             <article className="card">
-                <p className="card__chevron card__chevron_sale">Распродажа</p>
+                <div className="card__chevron-container">
+                    {card.isNew && <p className='card__chevron card__chevron_new'>Новинка</p>}
+                    {card.isHit && <p className='card__chevron card__chevron_hit'>Хит продаж</p>}
+                    {card.isSale && <p className='card__chevron card__chevron_sale'>Распродажа</p>}
+                </div>
                 <img className="card__image" src={card.image} alt="Фото товара" />
                 <h2 className="card__title">{card.title}</h2>
                 <p className="card__description">{card.about}</p>

@@ -63,11 +63,16 @@
     color: var(--main-green);
 }
 
-.card__chevron {
+.card__chevron-container {
+    display: flex;
+    column-gap: 5px;
     position: absolute;
     z-index: 2;
     top: 10px;
     left: 15px;
+}
+
+.card__chevron {
     padding: 5px 10px;
     border-radius: var(--border-radius);
     color: #FFF;
