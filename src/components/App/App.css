@@ -24,8 +24,17 @@
 }
 
 .button:hover {
-    opacity: 0.8;
+    background-color: #28D64D;
     cursor: pointer;
+}
+
+.button:active {
+    background-color: #1A8932;
+}
+
+.button:disabled {
+    background-color: #637667;
+    pointer-events: none;
 }
 
 .section-title {
