@@ -1,7 +1,7 @@
 import React from 'react'
 import './Card.css'
 
-const Card = ({ card, isLoading }) => {
+const Card = ({ card }) => {
     return (
         <li className="cards__list-item">
             <article className="card">
@@ -10,7 +10,7 @@ const Card = ({ card, isLoading }) => {
                     {card.isHit && <p className='card__chevron card__chevron_hit'>Хит продаж</p>}
                     {card.isSale && <p className='card__chevron card__chevron_sale'>Распродажа</p>}
                 </div>
-                <div className={`card__image-container ${isLoading ? 'card__image-container_type_loading' : ''}`}>
+                <div className="card__image-container card__image-container_type_loading">
                     <img className="card__image" src={card.image} alt="Фото товара" />
                 </div>
                 <h2 className="card__title">{card.title}</h2>
