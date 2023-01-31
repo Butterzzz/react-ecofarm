@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Search.css'
 import { BiSearch } from 'react-icons/bi'
+import { MdOutlineClose } from 'react-icons/md'
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 
-const Search = ({ handleSearchMovies }) => {
-    const { values, handleChange, isValid } = useFormWithValidation();
+const Search = ({ handleSearchMovies, onClear }) => {
+    const { values, handleChange, isValid, resetForm } = useFormWithValidation();
     const [errorMessage, setErrorMessage] = useState('');
 
     function handleSubmit(e) {
@@ -16,6 +17,15 @@ const Search = ({ handleSearchMovies }) => {
             setErrorMessage('Нужно ввести ключевое слово')
         )
     }
+
+    function handleClearForm() {
+        resetForm();
+        onClear();
+    }
+
+    useEffect(() => {
+        setErrorMessage('');
+    }, [values.search]);
 
     return (
         <section className="search">
@@ -31,14 +41,23 @@ const Search = ({ handleSearchMovies }) => {
                     onChange={handleChange}
                     placeholder="Поиск по каталогу"
                 />
+                {isValid &&
+                    <button
+                        className="search-form__button search-form__button_clear button"
+                        type="button"
+                        aria-label="Очистить">
+                        <MdOutlineClose className="search-form__icon" onClick={handleClearForm} />
+                    </button>
+                }
+
                 <button
-                    className="search-form__button button"
+                    className="search-form__button search-form__button_search button"
                     type="submit"
                     aria-label="Поиск">
                     <BiSearch className='search-form__icon' />
                 </button>
             </form>
-            <p>{errorMessage}</p>
+            <p className="search__error-message">{errorMessage}</p>
         </section>
     )
 }

@@ -4,12 +4,16 @@ import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
 
 
-const CardList = ({ cards, notFound, isLoading }) => {
+const CardList = ({ isLoading, notFound, cards }) => {
   return (
     <section className="cards" aria-label="Карточки">
-      {isLoading && <Preloader />}
+      {isLoading &&
+        <Preloader />
+      }
 
-      <p className={`cardlist__errors ${!notFound && 'cardlist__errors_type_hidden'}`}>Ничего не найдено</p>
+      {notFound &&
+        <p className="cardlist__errors">Ничего не найдено</p>
+      }
 
       <ul className="cards__list">
         {cards.map((card) => (

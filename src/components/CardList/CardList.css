@@ -1,23 +1,18 @@
-.cards {
-
-}
+.cards {}
 
 .cards__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
-    gap: 40px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 50px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .cardlist__errors {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-  }
-  
-  .cardlist__errors_type_hidden {
-    display: none;
-  }
-  
+  font-size: 32px;
+  color: var(--title-color);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}

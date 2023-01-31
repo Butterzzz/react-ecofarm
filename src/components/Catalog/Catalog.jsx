@@ -6,18 +6,19 @@ import CardList from '../CardList/CardList'
 
 const Catalog = () => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
+  // const [localCards, setLocalCards] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-
-  useEffect(() => {
+  function loadingCards() {
+    setNotFound(false);
     setIsLoading(true);
     fetch('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards')
       .then((res) => {
         return res.json();
       })
-      .then((cards) => {
-        setApiCards(cards);
+      .then((resCards) => {
+        setApiCards(resCards);
       })
       .catch((err) => {
         console.log(err);
@@ -25,6 +26,10 @@ const Catalog = () => {
       .finally(() => {
         setIsLoading(false);
       })
+  }
+
+  useEffect(() => {
+    loadingCards();
   }, [])
 
   function handleSearchMovies(keyword) {
@@ -49,12 +54,17 @@ const Catalog = () => {
     return foundCards;
   }
 
+  function handleClean() {
+    loadingCards();
+  }
+
   return (
     <section className="catalog" id="catalog">
       <h2 className="catalog__title section-title">Каталог</h2>
 
       <Search
         handleSearchMovies={handleSearchMovies}
+        onClear={handleClean}
       />
       <CardList
         cards={apiCards}
