@@ -26,8 +26,8 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={<Catalog />} />
-            <Route path="*" element={<NotFound />} />
           </Route>
+            <Route path="*" element={<NotFound />} />
         </Routes>
 
         <Popup

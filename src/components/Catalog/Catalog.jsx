@@ -1,20 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Catalog.css'
 import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
-import { cards } from '../../data/data'
+// import { cards } from '../../data/data'
 
 const Catalog = () => {
-  const [arr, setValue] = useState(cards);
+  const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
   const [notFound, setNotFound] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards')
+      .then((res) => {
+        return res.json();
+      })
+      .then((cards) => {
+        setApiCards(cards);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      })
+  }, [])
 
   function handleSearchMovies(keyword) {
-    const searchResult = searchByKeyword(cards, keyword);
+    const searchResult = searchByKeyword(apiCards, keyword);
     if (searchResult.length === 0) {
-      setValue([]);
+      setApiCards([]);
       setNotFound(true);
     }
-    setValue(searchResult);
+    setApiCards(searchResult);
   }
 
   // Поиск по запросу пользователя
@@ -38,8 +57,9 @@ const Catalog = () => {
         handleSearchMovies={handleSearchMovies}
       />
       <CardList
-        cards={arr}
+        cards={apiCards}
         notFound={notFound}
+        isLoading={isLoading}
       />
     </section>
   )

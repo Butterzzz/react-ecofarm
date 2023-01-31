@@ -19,7 +19,9 @@ const Hero = ({ onClickAbout }) => {
                         </button>
                     </div>
                 </div>
-                <img className="hero__image" src={promoImg} alt="Микрозелень" />
+                <div className="hero__image-container">
+                    <img className="hero__image" src={promoImg} alt="Микрозелень" />
+                </div>
             </div>
         </section>
     )

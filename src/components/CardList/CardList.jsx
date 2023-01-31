@@ -1,14 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './CardList.css'
 import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
 
 
-const CardList = ({ cards, notFound }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  setTimeout(() => setIsLoading(false), 3000) // бутафория
-
+const CardList = ({ cards, notFound, isLoading }) => {
   return (
     <section className="cards" aria-label="Карточки">
       {isLoading && <Preloader />}
@@ -20,6 +16,7 @@ const CardList = ({ cards, notFound }) => {
           <Card
             key={card.id}
             card={card}
+            isLoading={isLoading}
           />
         ))
         }

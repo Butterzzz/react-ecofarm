@@ -7,7 +7,18 @@
     height: 400px;
     object-fit: cover;
     object-position: center;
+}
+
+.card__image-container {
+    width: 360px;
+    height: 400px;
     margin: 0 0 20px 0;
+}
+
+.card__image-container_type_loading {
+    background-image: url(../../images/card_placeholder.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .card__title {
@@ -87,7 +98,8 @@
 }
 
 .card__chevron_new {
-    background-color: #1ea5fc;;
+    background-color: #1ea5fc;
+    ;
 }
 
 .card__chevron_sale {
@@ -95,5 +107,6 @@
 }
 
 .card__chevron_hit {
-    background-color: #8962f8;;
+    background-color: #8962f8;
+    ;
 }
