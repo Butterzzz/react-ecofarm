@@ -30,10 +30,11 @@
 }
 
 .card__description {
-    max-width: 360px;
     max-height: 70px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: -webkit-box;
+	max-width: 360px;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
     overflow: hidden;
     font-weight: 300;
     font-size: 14px;
