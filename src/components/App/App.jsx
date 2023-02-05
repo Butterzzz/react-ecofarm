@@ -16,7 +16,7 @@ import { IconContext } from 'react-icons'
 const App = () => {
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+  const [order, setOrder] = useState([]);
 
   function handleVideoPopupClick() {
     setIsVideoPopupOpen(true);
@@ -24,12 +24,53 @@ const App = () => {
 
   function handleDrawerClick() {
     setIsDrawerOpen(true);
-}
+  }
 
   function closeAllPopups() {
     setIsDrawerOpen(false);
     setIsVideoPopupOpen(false);
   }
+
+  const addToOrder = (goodsItem) => {
+    let quantity = 1;
+
+    const indexInOrder = order.findIndex(
+      (item) => item.id === goodsItem.id
+    );
+
+    if (indexInOrder > -1) {
+      quantity = order[indexInOrder].quantity + 1;
+
+      setOrder(order.map((item) => {
+        if (item.id !== goodsItem.id) return item;
+
+        return {
+          id: item.id,
+          title: item.title,
+          price: item.price,
+          image: item.image,
+          quantity,
+        };
+      }),
+      );
+    } else {
+      setOrder([
+        ...order,
+        {
+          id: goodsItem.id,
+          title: goodsItem.title,
+          price: goodsItem.price,
+          image: goodsItem.image,
+          quantity,
+        },
+      ],
+      );
+    }
+  };
+
+  const removeFromOrder = (goodsItem) => {
+    setOrder(order.filter((item) => item.id !== goodsItem));
+  };
 
   return (
     <div className="page">
@@ -37,8 +78,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout onDrawerClick={handleDrawerClick} />}>
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
-            <Route path="catalog" element={<Catalog />} />
-            <Route path="catalog/:id" element={<CardPage />} />
+            <Route path="catalog" element={<Catalog setOrder={addToOrder} />} />
+            <Route path="catalog/:id" element={<CardPage setOrder={addToOrder} />} />
             <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />
@@ -51,6 +92,8 @@ const App = () => {
         <Drawer
           isOpen={isDrawerOpen}
           onClose={closeAllPopups}
+          order={order}
+          setOrder={removeFromOrder}
         />
 
         <Popup

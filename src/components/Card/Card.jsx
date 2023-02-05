@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
-const Card = ({ card }) => {
-    function handleClick() {
-        alert('По кнопке кликнули');
-    }
+const Card = ({ card, setOrder }) => {
+    // function handleClick() {
+    //     alert('По кнопке кликнули');
+    // }
 
     return (
         <li className="cards__list-item">
@@ -23,7 +23,13 @@ const Card = ({ card }) => {
                 <p className="card__price">{card.price} <s>{card.discount}</s></p>
                 <div className="card__button-wrapper">
                     <Link to={`/catalog/${card.id}`} className="card__button button card__button_type_more">Подробнее</Link>
-                    <button className="card__button button card__button_type_add" type='button' onClick={handleClick}>Купить</button>
+                    <button className="card__button button card__button_type_add" type='button' onClick={() => setOrder({
+                        id: card.id,
+                        image: card.image,
+                        title: card.title,
+                        price: card.price,
+                    })}
+                    >Купить</button>
                 </div>
             </article>
         </li>

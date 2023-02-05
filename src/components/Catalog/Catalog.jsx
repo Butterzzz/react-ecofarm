@@ -4,11 +4,12 @@ import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
 // import { cards } from '../../data/data'
 
-const Catalog = () => {
+const Catalog = ({ setOrder }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
   // const [localCards, setLocalCards] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
 
   function loadingCards() {
     setNotFound(false);
@@ -70,6 +71,7 @@ const Catalog = () => {
         cards={apiCards}
         notFound={notFound}
         isLoading={isLoading}
+        setOrder={setOrder}
       />
     </section>
   )

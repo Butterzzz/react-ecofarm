@@ -4,7 +4,7 @@ import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
 
 
-const CardList = ({ isLoading, notFound, cards }) => {
+const CardList = ({ isLoading, notFound, cards, setOrder }) => {
   return (
     <section className="cards" aria-label="Карточки">
       {isLoading &&
@@ -21,6 +21,8 @@ const CardList = ({ isLoading, notFound, cards }) => {
             key={card.id}
             card={card}
             isLoading={isLoading}
+            setOrder={setOrder}
+            {...card}
           />
         ))
         }

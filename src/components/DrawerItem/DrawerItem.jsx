@@ -2,8 +2,7 @@ import React from 'react'
 import './DrawerItem.css'
 import { MdOutlineClose } from 'react-icons/md'
 
-const DrawerItem = (props) => {
-  const { id, title, price, image, setOrder } = props
+const DrawerItem = ({ id, title, price, image, quantity, setOrder }) => {
 
   return (
     <li className="drawer__list-item">
@@ -14,15 +13,13 @@ const DrawerItem = (props) => {
         </div>
 
         <div className="drawer-card__desc">
-          <p className="drawer-card__title">{title}Mueller - Kerluke</p>
-          <p className="drawer-card__price">{price}950 ₽</p>
+          <p className="drawer-card__title">{title}</p>
+          <p className="drawer-card__price">{price}руб x {quantity}</p>
         </div>
 
         <button className="drawer-card__button button" type="button" onClick={() => setOrder(id)}>
           <MdOutlineClose className="drawer-card__button-icon" />
         </button>
-
-        {/* {props.name} {props.price}руб x{props.quantity} */}
 
       </article>
     </li>

@@ -3,7 +3,7 @@ import './Drawer.css'
 import DrawerList from '../DrawerList/DrawerList'
 import { MdOutlineClose } from 'react-icons/md'
 
-const Drawer = ({ isOpen, onClose }) => {
+const Drawer = ({ isOpen, onClose, order, setOrder }) => {
     return (
         <div className={`drawer ${isOpen && "drawer_opened"}`}>
             <div className="drawer__container">
@@ -13,11 +13,14 @@ const Drawer = ({ isOpen, onClose }) => {
                         type="button"
                         aria-label="Очистить"
                         onClick={onClose}
-                        >
+                    >
                         <MdOutlineClose className="drawer__icon" />
                     </button>
                 </div>
-                <DrawerList />
+                <DrawerList
+                    order={order}
+                    setOrder={setOrder}
+                />
             </div>
         </div>
     )

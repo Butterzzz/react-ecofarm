@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom'
 import './CardPage.css'
 
 
-const CardPage = ({ handleClick }) => {
+const CardPage = ({ setOrder }) => {
   const { id } = useParams();
   const [card, setCard] = useState(null);
 
@@ -44,7 +44,13 @@ const CardPage = ({ handleClick }) => {
           <img src={card.image} alt={card.title} />
           <p>{card.about}</p>
           <p>{card.price}</p>
-          <button className="card__button button card__button_type_add" type='button' onClick={handleClick}>Купить</button>
+          <button className="card__button button card__button_type_add" type='button' onClick={() => setOrder({
+            id: card.id,
+            image: card.image,
+            title: card.title,
+            price: card.price,
+          })}
+          >Купить</button>
         </>
       )}
     </div>
