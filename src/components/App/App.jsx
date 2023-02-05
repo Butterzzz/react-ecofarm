@@ -18,15 +18,26 @@ const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [order, setOrder] = useState([]);
 
+  function scrollDisable() {
+    document.body.style.overflow = "hidden"
+  }
+
+  function scrollEnable() {
+    document.body.style.overflow = ""
+  }
+
   function handleVideoPopupClick() {
+    scrollDisable();
     setIsVideoPopupOpen(true);
   }
 
   function handleDrawerClick() {
+    scrollDisable();
     setIsDrawerOpen(true);
   }
 
   function closeAllPopups() {
+    scrollEnable();
     setIsDrawerOpen(false);
     setIsVideoPopupOpen(false);
   }
