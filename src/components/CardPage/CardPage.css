@@ -1,0 +1,26 @@
+.breadcrumb-list {
+    margin: 0;
+    padding: 0;
+    color: gray;
+    background-color: transparent;
+    border-radius: 0;
+    display: flex;
+    font-size: 13px;
+    max-height: 18px;
+    overflow: hidden;
+}
+
+.breadcrumb-list__item {
+    list-style-type: none;
+    white-space: nowrap;
+}
+
+.breadcrumb-list>li+li:before {
+    color: gray;
+    content: "> ";
+    padding: 0 5px;
+}
+
+.breadcrumb-list__link {
+    text-decoration: none;
+}

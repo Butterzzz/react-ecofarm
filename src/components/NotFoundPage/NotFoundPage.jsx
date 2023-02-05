@@ -1,11 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom'
-import './NotFound.css'
+// import { useNavigate } from 'react-router-dom'
+import './NotFoundPage.css'
 
-const NotFound = () => {
-  const navigate = useNavigate();
-
+const NotFoundPage = () => {
+  // const navigate = useNavigate();
   // const goBack = () => navigate(-1)
 
   return (
@@ -24,4 +23,4 @@ const NotFound = () => {
   )
 }
 
-export default NotFound
+export default NotFoundPage

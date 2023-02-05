@@ -4,7 +4,11 @@ import './App.css'
 import Layout from '../Layout/Layout'
 import Main from '../Main/Main'
 import Catalog from '../Catalog/Catalog'
-import NotFound from '../NotFound/NotFound'
+import CardPage from '../CardPage/CardPage'
+import BlogPage from '../BlogPage/BlogPage'
+import News from '../News/News'
+import NewsPage from '../NewsPage/NewsPage'
+import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import Popup from '../Popup/Popup'
 import { IconContext } from 'react-icons'
 
@@ -26,8 +30,14 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={<Catalog />} />
+            <Route path="catalog/:id" element={<CardPage />} />
+            <Route path="blog" element={<BlogPage />} >
+              <Route path="recipes" element={<p>Рецепты</p>} />
+              <Route path="news" element={<News />} />
+              <Route path="news/:id" element={<NewsPage />} />
+            </Route >
           </Route>
-            <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
 
         <Popup

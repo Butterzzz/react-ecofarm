@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.css'
 import Logo from '../../components/Logo/Logo'
 import Navigation from '../../components/Navigation/Navigation'
+import UserBar from '../../components/UserBar/UserBar'
 
 const Header = () => {
     return (
@@ -9,6 +10,7 @@ const Header = () => {
             <div className="header__conatiner">
                 <Logo />
                 <Navigation />
+                <UserBar />
             </div>
         </header>
     )
