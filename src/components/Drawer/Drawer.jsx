@@ -4,8 +4,13 @@ import DrawerList from '../DrawerList/DrawerList'
 import { MdOutlineClose } from 'react-icons/md'
 
 const Drawer = ({ isOpen, onClose, order, setOrder }) => {
+
+    const handleClose = () => {
+        onClose(false);
+    };
+
     return (
-        <div className={`drawer ${isOpen && "drawer_opened"}`}>
+        <div className={`drawer ${isOpen && "drawer_opened"}`} onClick={handleClose}>
             <div className="drawer__container">
                 <div className="drawer__wrapper">
                     <h2 className="drawer__title">Корзина</h2>
