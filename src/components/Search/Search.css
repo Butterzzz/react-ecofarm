@@ -44,14 +44,10 @@
     width: 44px;
     height: 44px;
     position: absolute;
-    top: 12px;
-    right: 12px;
     border: none;
     background-color: #F7F7F7;
     cursor: pointer;
     border-radius: var(--border-radius);
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .search-form__button_clear {

@@ -45,8 +45,9 @@ const Search = ({ handleSearchMovies, onClear }) => {
                     <button
                         className="search-form__button search-form__button_clear button"
                         type="button"
-                        aria-label="Очистить">
-                        <MdOutlineClose className="search-form__icon" onClick={handleClearForm} />
+                        aria-label="Очистить"
+                        onClick={handleClearForm} >
+                        <MdOutlineClose className="search-form__icon" />
                     </button>
                 }
 

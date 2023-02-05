@@ -4,15 +4,17 @@ import './Layout.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
-const Layout = () => {
+const Layout = ({ onDrawerClick }) => {
     return (
         <>
-            <Header />
+            <Header
+                onDrawerClick={onDrawerClick}
+            />
 
             <main className="content">
                 <Outlet />
             </main>
-            
+
             <Footer />
         </>
     )

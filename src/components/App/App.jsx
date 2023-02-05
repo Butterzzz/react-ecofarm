@@ -10,16 +10,24 @@ import News from '../News/News'
 import NewsPage from '../NewsPage/NewsPage'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import Popup from '../Popup/Popup'
+import Drawer from '../Drawer/Drawer'
 import { IconContext } from 'react-icons'
 
 const App = () => {
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
 
   function handleVideoPopupClick() {
     setIsVideoPopupOpen(true);
   }
 
+  function handleDrawerClick() {
+    setIsDrawerOpen(true);
+}
+
   function closeAllPopups() {
+    setIsDrawerOpen(false);
     setIsVideoPopupOpen(false);
   }
 
@@ -27,7 +35,7 @@ const App = () => {
     <div className="page">
       <IconContext.Provider value={{ className: "react-icons" }}>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Layout onDrawerClick={handleDrawerClick} />}>
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={<Catalog />} />
             <Route path="catalog/:id" element={<CardPage />} />
@@ -39,6 +47,11 @@ const App = () => {
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
+
+        <Drawer
+          isOpen={isDrawerOpen}
+          onClose={closeAllPopups}
+        />
 
         <Popup
           isOpen={isVideoPopupOpen}

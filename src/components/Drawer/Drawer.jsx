@@ -1,0 +1,26 @@
+import React from 'react'
+import './Drawer.css'
+import DrawerList from '../DrawerList/DrawerList'
+import { MdOutlineClose } from 'react-icons/md'
+
+const Drawer = ({ isOpen, onClose }) => {
+    return (
+        <div className={`drawer ${isOpen && "drawer_opened"}`}>
+            <div className="drawer__container">
+                <div className="drawer__wrapper">
+                    <h2 className="drawer__title">Корзина</h2>
+                    <button className="drawer__button button"
+                        type="button"
+                        aria-label="Очистить"
+                        onClick={onClose}
+                        >
+                        <MdOutlineClose className="drawer__icon" />
+                    </button>
+                </div>
+                <DrawerList />
+            </div>
+        </div>
+    )
+}
+
+export default Drawer

@@ -1,0 +1,58 @@
+.drawer__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 385px;
+    height: 120px;
+    background-color: #FFFFFF;
+    border: 1px solid #F3F3F3;
+    border-radius: var(--border-radius);
+    padding: 20px;
+}
+
+.drawer-card__image-container {
+    width: 70px;
+    height: 70px;
+    background-image: url(../../images/drawer-card-placeholder.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.drawer-card__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.drawer-card__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.drawer-card__button-icon {
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.drawer-card__title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--title-color);
+    margin: 0 0 10px 0;
+}
+
+.drawer-card__price {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin: 0;
+}
