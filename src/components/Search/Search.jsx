@@ -4,15 +4,15 @@ import { BiSearch } from 'react-icons/bi'
 import { MdOutlineClose } from 'react-icons/md'
 import { useFormWithValidation } from '../../hooks/useFormWithValidation'
 
-const Search = ({ handleSearchMovies, onClear }) => {
-    const { values, handleChange, isValid, resetForm } = useFormWithValidation();
+const Search = ({ handleSearchCards, onClear }) => {
+    const {values, handleChange, isValid, resetForm } = useFormWithValidation();
     const [errorMessage, setErrorMessage] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
 
         isValid ? (
-            handleSearchMovies(values.search)
+            handleSearchCards(values.search)
         ) : (
             setErrorMessage('Нужно ввести ключевое слово')
         )

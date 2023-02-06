@@ -6,10 +6,8 @@ import CardList from '../CardList/CardList'
 
 const Catalog = ({ setOrder }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
-  // const [localCards, setLocalCards] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
 
   function loadingCards() {
     setNotFound(false);
@@ -33,7 +31,7 @@ const Catalog = ({ setOrder }) => {
     loadingCards();
   }, [])
 
-  function handleSearchMovies(keyword) {
+  function handleSearchCards(keyword) {
     const searchResult = searchByKeyword(apiCards, keyword);
     if (searchResult.length === 0) {
       setApiCards([]);
@@ -64,7 +62,7 @@ const Catalog = ({ setOrder }) => {
       <h2 className="catalog__title section-title">Каталог</h2>
 
       <Search
-        handleSearchMovies={handleSearchMovies}
+        handleSearchCards={handleSearchCards}
         onClear={handleClean}
       />
       <CardList

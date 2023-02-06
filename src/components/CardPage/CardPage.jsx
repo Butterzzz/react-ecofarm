@@ -11,9 +11,6 @@ const CardPage = ({ setOrder }) => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1)
 
-  // const newPrice2 = (card.price * (1 - card.discount)).toFixed(0);
-  console.log(card)
-
   useEffect(() => {
     fetch(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards/${id}`)
       .then((res) => {
