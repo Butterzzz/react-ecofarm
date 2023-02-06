@@ -14,7 +14,7 @@ const DrawerItem = ({ id, title, price, image, quantity, setOrder }) => {
 
         <div className="drawer-card__desc">
           <p className="drawer-card__title">{title}</p>
-          <p className="drawer-card__price">{price}руб x {quantity}</p>
+          <p className="drawer-card__price">{price} руб x {quantity}</p>
         </div>
 
         <button className="drawer-card__button button" type="button" onClick={() => setOrder(id)}>
