@@ -6,9 +6,13 @@ import './CardPage.css'
 const CardPage = ({ setOrder }) => {
   const { id } = useParams();
   const [card, setCard] = useState(null);
+  const [discount, setDiscount] = useState(null);
 
   const navigate = useNavigate();
   const goBack = () => navigate(-1)
+
+  // const newPrice2 = (card.price * (1 - card.discount)).toFixed(0);
+  console.log(card)
 
   useEffect(() => {
     fetch(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards/${id}`)
@@ -17,6 +21,7 @@ const CardPage = ({ setOrder }) => {
       })
       .then((resCard) => {
         setCard(resCard);
+        setDiscount(resCard.price * (1 - resCard.discount)).toFixed(0);
       })
       .catch((err) => {
         console.log(err);
@@ -44,11 +49,13 @@ const CardPage = ({ setOrder }) => {
           <img src={card.image} alt={card.title} />
           <p>{card.about}</p>
           <p>{card.price}</p>
-          <button className="card__button button card__button_type_add" type='button' onClick={() => setOrder({
+          <p>{discount}</p>
+
+          <button className="card__button button card__button_type_buy" onClick={() => setOrder({
             id: card.id,
             image: card.image,
             title: card.title,
-            price: card.price,
+            price: discount,
           })}
           >Купить</button>
         </>
