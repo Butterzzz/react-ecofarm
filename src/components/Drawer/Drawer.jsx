@@ -5,8 +5,10 @@ import { MdOutlineClose } from 'react-icons/md'
 
 const Drawer = ({ isOpen, onClose, order, setOrder }) => {
 
-    const handleClose = () => {
-        onClose(false);
+    const handleClose = (evt) => {
+        if (evt.target.classList.contains('drawer_opened')) {
+            onClose(false);
+        }
     };
 
     return (

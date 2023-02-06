@@ -4,14 +4,16 @@ import { GrFormClose } from 'react-icons/gr'
 
 const Popup = ({ children, isOpen, onClose }) => {
 
-    const handleKeyDown = event => {
-        if (event.key === "Escape") {
+    const handleKeyDown = evt => {
+        if (evt.key === "Escape") {
             onClose(false);
         }
     };
 
-    const handleClose = () => {
-        onClose(false);
+    const handleClose = (evt) => {
+        if (evt.target.classList.contains('popup_opened')) {
+            onClose(false);
+        };
     };
 
     useEffect(() => {
