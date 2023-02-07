@@ -22,12 +22,14 @@ const CatalogSearch = ({ searchTerm, setSearchTerm }) => {
                     placeholder="Поиск по каталогу"
                 />
 
-                <button
-                    className="search__button search__button_clear button"
-                    aria-label="Очистить"
-                    onClick={handleClearInput}>
-                    <MdOutlineClose className="search__icon" />
-                </button>
+                {searchTerm &&
+                    <button
+                        className="search__button search__button_clear button"
+                        aria-label="Очистить"
+                        onClick={handleClearInput}>
+                        <MdOutlineClose className="search__icon" />
+                    </button>
+                }
             </div>
         </div>
     )
