@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    flex: 1;
     list-style: none;
-    margin: 0;
+    margin: 40px 0 10px 0;
     padding: 0;
+    overflow-y: auto;
 }
 
 .drawer__list-item {

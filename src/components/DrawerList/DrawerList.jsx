@@ -14,14 +14,6 @@ const DrawerList = ({ order, setOrder, onClose }) => {
             {order.map((item, index) => (
                 <DrawerItem key={index} setOrder={setOrder} {...item} />
             ))}
-
-            <li className="drawer__list active">
-                Общая стоимость:{' '}
-                {order.reduce((acc, item) => {
-                    return acc + item.price * item.quantity;
-                }, 0)}{' '}
-                ₽
-            </li>
         </ul>
     )
 }
