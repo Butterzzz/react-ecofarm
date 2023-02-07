@@ -27,6 +27,7 @@ const Drawer = ({ isOpen, onClose, order, setOrder }) => {
                 <DrawerList
                     order={order}
                     setOrder={setOrder}
+                    onClose={onClose}
                 />
             </div>
         </div>
