@@ -2,8 +2,22 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
-const Card = ({ card, setOrder }) => {
+const Card = ({ card, setOrder, setIsVisible }) => {
     const newPrice = (card.price * (1 - card.discount)).toFixed(0);
+
+    const handleBuy = () => {
+        setOrder({
+            id: card.id,
+            image: card.image,
+            title: card.title,
+            price: newPrice,
+            discount: card.discount,
+        })
+        setIsVisible(true);
+        setTimeout(() => {
+            setIsVisible(false);
+        }, 3000);
+    };
 
     return (
         <li className="cards__list-item">
@@ -37,13 +51,7 @@ const Card = ({ card, setOrder }) => {
                     </Link>
                     <button
                         className="card__button button card__button_type_buy"
-                        onClick={() => setOrder({
-                            id: card.id,
-                            image: card.image,
-                            title: card.title,
-                            price: newPrice,
-                            discount: card.discount,
-                        })}>
+                        onClick={handleBuy}>
                         Купить
                     </button>
                 </div>

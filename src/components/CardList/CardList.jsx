@@ -4,14 +4,14 @@ import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
 
 
-const CardList = ({ isLoading, notFound, cards, setOrder }) => {
+const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisible }) => {
   return (
     <section className="cards" aria-label="Карточки">
       {isLoading &&
         <Preloader />
       }
 
-      {(notFound && cards.length === 0 && !isLoading)  &&
+      {(notFound && cards.length === 0 && !isLoading) &&
         <p className="cardlist__errors">Ничего не найдено</p>
       }
 
@@ -22,6 +22,7 @@ const CardList = ({ isLoading, notFound, cards, setOrder }) => {
             card={card}
             isLoading={isLoading}
             setOrder={setOrder}
+            setIsVisible={setIsVisible}
             {...card}
           />
         ))

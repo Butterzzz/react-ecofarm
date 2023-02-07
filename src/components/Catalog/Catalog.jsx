@@ -3,6 +3,7 @@ import './Catalog.css'
 // import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
+import Toast from '../Toast/Toast'
 // import { cards } from '../../data/data'
 
 const Catalog = ({ setOrder }) => {
@@ -11,6 +12,7 @@ const Catalog = ({ setOrder }) => {
   const [searchTerm, setSearchTerm] = useState(''); // Поисковое слово
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNoFound] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   function loadingCards() {
     setIsLoading(true);
@@ -58,7 +60,10 @@ const Catalog = ({ setOrder }) => {
         isLoading={isLoading}
         setOrder={setOrder}
         notFound={notFound}
+        setIsVisible={setIsVisible}
       />
+
+      <Toast isVisible={isVisible}/>
     </section>
   )
 }
