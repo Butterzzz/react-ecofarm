@@ -10,6 +10,7 @@ const Catalog = ({ setOrder }) => {
   const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильроованные карточки
   const [searchTerm, setSearchTerm] = useState(''); // Поисковое слово
   const [isLoading, setIsLoading] = useState(false);
+  const [notFound, setNoFound] = useState(false);
 
   function loadingCards() {
     setIsLoading(true);
@@ -37,6 +38,9 @@ const Catalog = ({ setOrder }) => {
       return item.title.toLowerCase().includes(searchTerm.toLowerCase())
         || item.about.toLowerCase().includes(searchTerm.toLowerCase());
     });
+    if (filteredData.length === 0) {
+      setNoFound(true);
+    }
     setFilteredCatalog(filteredData);
   }, [searchTerm, apiCards]);
 
@@ -53,6 +57,7 @@ const Catalog = ({ setOrder }) => {
         cards={filteredCatalog}
         isLoading={isLoading}
         setOrder={setOrder}
+        notFound={notFound}
       />
     </section>
   )

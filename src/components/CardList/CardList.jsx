@@ -11,7 +11,7 @@ const CardList = ({ isLoading, notFound, cards, setOrder }) => {
         <Preloader />
       }
 
-      {notFound &&
+      {(notFound && cards.length === 0 && !isLoading)  &&
         <p className="cardlist__errors">Ничего не найдено</p>
       }
 
