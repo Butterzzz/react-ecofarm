@@ -8,7 +8,7 @@ import CatalogSearch from '../CatalogSearch/CatalogSearch'
 const Catalog = ({ setOrder, setIsVisibleToast }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
   const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильтрованные карточки
-  const [searchTerm, setSearchTerm] = useState(''); // Поисковое слово
+  const [searchValue, setSearchValue] = useState(''); // Поисковое слово
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNoFound] = useState(false);
 
@@ -35,22 +35,22 @@ const Catalog = ({ setOrder, setIsVisibleToast }) => {
 
   useEffect(() => {
     const filteredData = apiCards.filter((item) => {
-      return item.title.toLowerCase().includes(searchTerm.toLowerCase())
-        || item.about.toLowerCase().includes(searchTerm.toLowerCase());
+      return item.title.toLowerCase().includes(searchValue.toLowerCase())
+        || item.about.toLowerCase().includes(searchValue.toLowerCase());
     });
     if (filteredData.length === 0) {
       setNoFound(true);
     }
     setFilteredCatalog(filteredData);
-  }, [searchTerm, apiCards]);
+  }, [searchValue, apiCards]);
 
   return (
     <section className="catalog" id="catalog">
       <h2 className="catalog__title section-title">Каталог</h2>
 
       <CatalogSearch
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
       />
 
       <CardList
