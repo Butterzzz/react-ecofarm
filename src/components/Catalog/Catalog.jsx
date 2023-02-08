@@ -3,16 +3,14 @@ import './Catalog.css'
 // import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
-import Toast from '../Toast/Toast'
 // import { cards } from '../../data/data'
 
-const Catalog = ({ setOrder }) => {
+const Catalog = ({ setOrder, setIsVisibleToast }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
-  const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильроованные карточки
+  const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильтрованные карточки
   const [searchTerm, setSearchTerm] = useState(''); // Поисковое слово
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNoFound] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
 
   function loadingCards() {
     setIsLoading(true);
@@ -60,10 +58,9 @@ const Catalog = ({ setOrder }) => {
         isLoading={isLoading}
         setOrder={setOrder}
         notFound={notFound}
-        setIsVisible={setIsVisible}
+        setIsVisibleToast={setIsVisibleToast}
       />
 
-      <Toast isVisible={isVisible}/>
     </section>
   )
 }

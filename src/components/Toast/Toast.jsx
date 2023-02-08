@@ -1,9 +1,9 @@
 import React from 'react'
 import './Toast.css'
 
-const Toast = ({ isVisible }) => {
+const Toast = ({ isVisibleToast }) => {
     return (
-        <div className={`toast ${isVisible && 'toast_opened'}`}>
+        <div className={`toast ${isVisibleToast && 'toast_opened'}`}>
             Товар добавлен в корзину!
         </div>
     )

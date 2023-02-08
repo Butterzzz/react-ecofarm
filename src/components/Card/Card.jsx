@@ -2,10 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Card.css'
 
-const Card = ({ card, setOrder, setIsVisible }) => {
+const Card = ({ card, setOrder, setIsVisibleToast }) => {
     const newPrice = (card.price * (1 - card.discount)).toFixed(0);
 
     const handleBuy = () => {
+        // onBuy(card);
+
         setOrder({
             id: card.id,
             image: card.image,
@@ -13,9 +15,9 @@ const Card = ({ card, setOrder, setIsVisible }) => {
             price: newPrice,
             discount: card.discount,
         })
-        setIsVisible(true);
+        setIsVisibleToast(true);
         setTimeout(() => {
-            setIsVisible(false);
+            setIsVisibleToast(false);
         }, 3000);
     };
 

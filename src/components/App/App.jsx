@@ -11,12 +11,14 @@ import NewsPage from '../NewsPage/NewsPage'
 import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import Popup from '../Popup/Popup'
 import Drawer from '../Drawer/Drawer'
+import Toast from '../Toast/Toast'
 import { IconContext } from 'react-icons'
 
 const App = () => {
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [order, setOrder] = useState([]);
+  const [order, setOrder] = useState([]); // Корзина
+  const [isVisibleToast, setIsVisibleToast] = useState(false); // Всплывающая уведомляшка
 
   function scrollDisable() {
     document.body.style.overflow = "hidden"
@@ -42,6 +44,13 @@ const App = () => {
     setIsVideoPopupOpen(false);
   }
 
+  // Добавление товара в корзину
+  // const addToOrder = (card) => {
+  //   console.log(card, 'Добавили объект карточки');
+  //   setOrder(prev => [...prev, card]);
+  // };
+
+  // Добавление товара в корзину
   const addToOrder = (goodsItem) => {
     let quantity = 1;
 
@@ -79,6 +88,9 @@ const App = () => {
     }
   };
 
+  // console.log(order);
+
+  // Удаление товара из корзины
   const removeFromOrder = (goodsItem) => {
     setOrder(order.filter((item) => item.id !== goodsItem));
   };
@@ -89,7 +101,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout onDrawerClick={handleDrawerClick} />}>
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
-            <Route path="catalog" element={<Catalog setOrder={addToOrder} />} />
+            <Route path="catalog" element={
+              <Catalog
+                setOrder={addToOrder}
+                setIsVisibleToast={setIsVisibleToast}
+              />}
+            />
             <Route path="catalog/:id" element={<CardPage setOrder={addToOrder} />} />
             <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
@@ -113,6 +130,10 @@ const App = () => {
         >
           <iframe width="560" height="315" src="https://www.youtube.com/embed/7SW7BEJC56s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
         </Popup>
+
+        <Toast
+          isVisibleToast={isVisibleToast}
+        />
 
       </IconContext.Provider>
     </div>
