@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
+import axios from 'axios';
 import './App.css'
 import Layout from '../Layout/Layout'
 import Main from '../Main/Main'
@@ -19,6 +20,22 @@ const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [order, setOrder] = useState([]); // Корзина
   const [isVisibleToast, setIsVisibleToast] = useState(false); // Всплывающая уведомляшка
+
+
+  // Загрузка корзины с сервера mockAPI
+  function loadingOrders() {
+    axios.get('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order')
+      .then((resOrders) => {
+        setOrder(resOrders.data)
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+
+  useEffect(() => {
+    loadingOrders();
+  }, [])
 
   function scrollDisable() {
     document.body.style.overflow = "hidden"
@@ -52,6 +69,7 @@ const App = () => {
 
   // Добавление товара в корзину
   const addToOrder = (goodsItem) => {
+    axios.post('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order', goodsItem)
     let quantity = 1;
 
     const indexInOrder = order.findIndex(
@@ -91,8 +109,15 @@ const App = () => {
   // console.log(order);
 
   // Удаление товара из корзины
-  const removeFromOrder = (goodsItem) => {
-    setOrder(order.filter((item) => item.id !== goodsItem));
+  const removeFromOrder = (id) => {
+    console.log(id);
+    // дай мне предыдущий массив заказов,
+    // возьми все что в нем есть,
+    // пробежишь по нему,
+    // отфильтруй тот элемент, у которого id тот, который я тебе передал
+    setOrder((prev) => prev.filter((item) => item.id !== id));
+    axios.delete(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order/${id}`)
+    // setOrder(order.filter((item) => item.id !== id));
   };
 
   return (
