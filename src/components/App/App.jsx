@@ -20,7 +20,20 @@ const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [order, setOrder] = useState([]); // Корзина
   const [isVisibleToast, setIsVisibleToast] = useState(false); // Всплывающая уведомляшка
+  const [itemCount, setItemCount] = useState(0); // Количество товаров в корзине для бейджа
+  // const [quantity, setQuantity] = useState(1);
 
+  function addItem() {
+    setItemCount(itemCount + 1);
+  }
+
+  useEffect(() => {
+    setItemCount(order.length)
+  }, [order])
+
+  function removeItem() {
+    setItemCount(itemCount - 1);
+  }
 
   // Загрузка корзины с сервера mockAPI
   function loadingOrders() {
@@ -104,6 +117,7 @@ const App = () => {
       ],
       );
     }
+    addItem();
   };
 
   // console.log(order);
@@ -117,14 +131,19 @@ const App = () => {
     // отфильтруй тот элемент, у которого id тот, который я тебе передал
     setOrder((prev) => prev.filter((item) => item.id !== id));
     axios.delete(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order/${id}`)
-    // setOrder(order.filter((item) => item.id !== id));
+    removeItem();
   };
 
   return (
     <div className="page">
       <IconContext.Provider value={{ className: "react-icons" }}>
         <Routes>
-          <Route path="/" element={<Layout onDrawerClick={handleDrawerClick} />}>
+          <Route path="/" element={
+            <Layout
+              onDrawerClick={handleDrawerClick}
+              itemCount={itemCount}
+            />}
+          >
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={
               <Catalog

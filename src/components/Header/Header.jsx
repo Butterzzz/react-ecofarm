@@ -4,7 +4,7 @@ import Logo from '../../components/Logo/Logo'
 import Navigation from '../../components/Navigation/Navigation'
 import UserBar from '../../components/UserBar/UserBar'
 
-const Header = ({ onDrawerClick }) => {
+const Header = ({ onDrawerClick, itemCount }) => {
     return (
         <header className="header">
             <div className="header__conatiner">
@@ -12,6 +12,7 @@ const Header = ({ onDrawerClick }) => {
                 <Navigation />
                 <UserBar
                    onDrawerClick={onDrawerClick}
+                   itemCount={itemCount}
                 />
             </div>
         </header>
