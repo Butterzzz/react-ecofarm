@@ -5,12 +5,33 @@
     cursor: pointer;
     border: 0;
     background-color: transparent;
+    position: relative;
 }
 
 .userBar__icon {
     color: var(--title-color);
     font-size: 22px;
     color: #4e4e4e;
+}
+
+.userBar__badge {
+    background-color: var(--main-green);
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px var(--white);
+    color: var(--white);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: 700;
+    height: 15px;
+    min-width: 16px;
+    padding: 1px 4px;
+    position: absolute;
+    text-align: center;
+    top: -3px;
+    right: 17px;
 }
 
 .userBar__text {
