@@ -18,7 +18,7 @@ const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast }) =
       <ul className="cards__list">
         {cards.map((card) => (
           <Card
-            key={card.id}
+            key={card._id}
             card={card}
 
             // onBuy={(card) => onBuy(card)}

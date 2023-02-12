@@ -9,7 +9,7 @@ const Card = ({ card, setOrder, setIsVisibleToast }) => {
         // onBuy(card);
 
         setOrder({
-            id: card.id,
+            id: card._id,
             image: card.image,
             title: card.title,
             price: newPrice,
@@ -47,7 +47,7 @@ const Card = ({ card, setOrder, setIsVisibleToast }) => {
 
                 <div className="card__buttons-container">
                     <Link
-                        to={`/catalog/${card.id}`}
+                        to={`/catalog/cards/${card._id}`}
                         className="card__button button card__button_type_more">
                         Подробнее
                     </Link>
