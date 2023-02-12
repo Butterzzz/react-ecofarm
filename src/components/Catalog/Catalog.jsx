@@ -32,7 +32,7 @@ const Catalog = ({ setOrder, setIsVisibleToast }) => {
 
   function loadingCards() {
     setIsLoading(true);
-    axios.get('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards')
+    axios.get('http://localhost:3003/catalog/cards')
       .then((resCards) => {
         setApiCards(resCards.data)
       })
