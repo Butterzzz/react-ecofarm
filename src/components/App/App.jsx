@@ -151,7 +151,7 @@ const App = () => {
                 setIsVisibleToast={setIsVisibleToast}
               />}
             />
-            <Route path="catalog/:id" element={<CardPage setOrder={addToOrder} />} />
+            <Route path="catalog/cards/:id" element={<CardPage setOrder={addToOrder} setIsVisibleToast={setIsVisibleToast}/>} />
             <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />

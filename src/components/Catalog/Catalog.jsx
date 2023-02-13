@@ -4,7 +4,6 @@ import axios from 'axios';
 // import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
-// import { cards } from '../../data/data'
 
 const Catalog = ({ setOrder, setIsVisibleToast }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера

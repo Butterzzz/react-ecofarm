@@ -12,8 +12,7 @@ const Card = ({ card, setOrder, setIsVisibleToast }) => {
             id: card._id,
             image: card.image,
             title: card.title,
-            price: newPrice,
-            discount: card.discount,
+            price: newPrice
         })
         setIsVisibleToast(true);
         setTimeout(() => {

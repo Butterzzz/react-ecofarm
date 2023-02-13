@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom'
 import './CardPage.css'
+import axios from 'axios';
 
-
-const CardPage = ({ setOrder }) => {
+const CardPage = ({ setOrder, setIsVisibleToast }) => {
   const { id } = useParams();
   const [card, setCard] = useState(null);
   const [discount, setDiscount] = useState(null);
@@ -11,14 +11,42 @@ const CardPage = ({ setOrder }) => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1)
 
+  const handleBuy = () => {
+    // onBuy(card);
+
+    setOrder({
+      id: card._id,
+      image: card.image,
+      title: card.title,
+      price: discount,
+    })
+    setIsVisibleToast(true);
+    setTimeout(() => {
+        setIsVisibleToast(false);
+    }, 3000);
+};
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:3003/catalog/cards/${id}`)
+  //     .then((res) => {
+  //       return res.json();
+  //     })
+  //     .then((resCard) => {
+  //       setCard(resCard);
+  //       // console.log(resCard)
+  //       setDiscount(resCard.price * (1 - resCard.discount));
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     })
+  // }, [id]);
+
   useEffect(() => {
-    fetch(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards/${id}`)
-      .then((res) => {
-        return res.json();
-      })
+    axios.get(`http://localhost:3003/catalog/cards/${id}`)
       .then((resCard) => {
-        setCard(resCard);
-        setDiscount(resCard.price * (1 - resCard.discount)).toFixed(0);
+        setCard(resCard.data);
+        // console.log(resCard.data);
+        setDiscount(resCard.data.price * (1 - resCard.data.discount));
       })
       .catch((err) => {
         console.log(err);
@@ -48,13 +76,9 @@ const CardPage = ({ setOrder }) => {
           <p>{card.price}</p>
           <p>{discount}</p>
 
-          <button className="card__button button card__button_type_buy" onClick={() => setOrder({
-            id: card.id,
-            image: card.image,
-            title: card.title,
-            price: discount,
-          })}
-          >Купить</button>
+          <button className="card__button button card__button_type_buy" onClick={handleBuy}>
+            Купить
+          </button>
         </>
       )}
     </div>
