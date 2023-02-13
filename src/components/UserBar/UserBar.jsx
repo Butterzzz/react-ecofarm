@@ -11,7 +11,7 @@ export const UserBar = ({ onDrawerClick, itemCount }) => {
                 {itemCount > 0 &&
                     <span class="userBar__badge">{itemCount}</span>
                 }
-                <span className="userBar__text link">Корзина</span>
+                <span className="userBar__text">Корзина</span>
             </button>
         </div>
     )

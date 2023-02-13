@@ -8,10 +8,15 @@
     position: relative;
 }
 
+.userBar__cart:hover.userBar__cart svg,
+.userBar__cart:hover.userBar__cart span {
+    transition: var(--transition);
+    color: var(--main-green);
+}
+
 .userBar__icon {
-    color: var(--title-color);
+    color: var(--black-08);
     font-size: 22px;
-    color: #4e4e4e;
 }
 
 .userBar__badge {
@@ -39,5 +44,5 @@
     font-style: normal;
     font-size: 16px;
     line-height: 21px;
-    color: #4e4e4e;
+    color: var(--black-08);
 }

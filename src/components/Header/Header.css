@@ -1,12 +1,14 @@
 .header {
-    background-color: #EAEAEA;
+    background-color: var(--white-gray);
+    border-bottom: 1px solid var(--light-gray);
 }
 
-.header__conatiner {
+.header__container {
     max-width: 1280px;
+    height: 80px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 18px 50px;
+    padding: 20px 50px;
 }
