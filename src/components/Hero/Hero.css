@@ -1,80 +1,80 @@
 .hero {
-  outline: 1px solid firebrick;
-  padding: 0 0 100px 0;
-}
-
-.hero__container {
-  max-width: 1280px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  box-sizing: border-box;
-  margin: 0 auto;
-  background-color: transparent;
-  gap: 20px;
-}
-
-.hero__content {
-  max-width: 380px;
-  margin: 89px 0 0 100px;
+  min-height: calc(100vh - 80px);
+  background-image: url(../../images/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
 }
 
 .hero__title {
-  max-width: 380px;
-  font-size: 50px;
-  line-height: 58px;
+  max-width: 720px;
+  font-size: 96px;
+  line-height: 110px;
   font-weight: 700;
-  color: var(--title-color);
-  margin: 0;
-  padding: 0 0 26px 0;
+  color: var(--black);
+  margin: 0 0 20px 0;
+  padding: 20% 0 0 0;
 }
 
 .hero__subtitle {
-  max-width: 380px;
-  font-size: 16px;
-  line-height: 21px;
+  max-width: 720px;
+  font-size: 24px;
+  line-height: 31px;
   font-weight: 400;
-  color: var(--title-color);
-  mix-blend-mode: normal;
-  opacity: 0.6;
-  margin: 0;
-  padding: 0 0 50px 0;
+  color: var(--black-08);
+  margin: 0 0 60px 0;
+  padding: 0;
 }
 
 .hero__button-container {
-  max-width: 380px;
+  max-width: 720px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 0 20px;
 }
 
 .hero__button {
-  width: 180px;
+  width: 300px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0 12px;
   font-size: 16px;
   line-height: 20px;
-  color: #FFF;
-  background-color: var(--main-green);
+  text-transform: uppercase;
   padding: 15px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--border-radius);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
-.hero__image-container {
-  width: 585px;
-  height: 450px;
+.hero__button_primary {
+  background-color: var(--main-green);
+  color: var(--white);
 }
 
-.hero__image {
-  width: 100%;
-  border-radius: var(--border-radius);
+.hero__button_secondary {
+  color: var(--main-green);
+  background-color: transparent;
+  border: 1px solid var(--main-green);
 }
 
+.hero__button_icon {
+  font-size: 22px;
+  color: var(--main-green);
+}
+
+.hero__button_secondary:hover {
+  color: var(--white);
+  background-color: var(--main-green);
+  border: 1px solid var(--main-green);
+}
+
+.hero__button_secondary:hover .hero__button_icon {
+  transition: var(--transition);
+  color: var(--white);
+}
 
 /* @media screen and (max-width: 880px) {
     .hero__container {
