@@ -1,11 +1,11 @@
 .userBar__cart {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     cursor: pointer;
     border: 0;
     background-color: transparent;
-    position: relative;
 }
 
 .userBar__cart:hover.userBar__cart svg,
@@ -15,34 +15,33 @@
 }
 
 .userBar__icon {
-    color: var(--black-08);
     font-size: 22px;
+    color: var(--black-08);
 }
 
 .userBar__badge {
-    background-color: var(--main-green);
-    border-radius: 50px;
-    box-shadow: 0 0 0 2px var(--white);
-    color: var(--white);
+    min-width: 16px;
+    height: 15px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    color: var(--white);
     font-size: 13px;
     line-height: 13px;
     font-weight: 700;
-    height: 15px;
-    min-width: 16px;
+    text-align: center;
+    background-color: var(--main-green);
+    border-radius: 50px;
+    box-shadow: 0 0 0 2px var(--white);
     padding: 1px 4px;
     position: absolute;
-    text-align: center;
     top: -3px;
     right: 17px;
 }
 
 .userBar__text {
-    font-weight: 400;
-    font-style: normal;
     font-size: 16px;
     line-height: 21px;
+    font-weight: 400;
     color: var(--black-08);
 }

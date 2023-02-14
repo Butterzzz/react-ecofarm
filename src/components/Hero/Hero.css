@@ -45,7 +45,6 @@
   text-transform: uppercase;
   padding: 15px 10px;
   border-radius: var(--border-radius);
-  box-sizing: border-box;
   cursor: pointer;
 }
 

@@ -1,7 +1,11 @@
+.card-page {
+    padding: 100px 50px;
+}
+
 .breadcrumb-list {
     margin: 0;
     padding: 0;
-    color: gray;
+    color: var(--gray);
     background-color: transparent;
     border-radius: 0;
     display: flex;
@@ -16,7 +20,7 @@
 }
 
 .breadcrumb-list>li+li:before {
-    color: gray;
+    color: var(--gray);
     content: "> ";
     padding: 0 5px;
 }

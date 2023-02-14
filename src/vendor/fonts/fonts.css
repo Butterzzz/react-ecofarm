@@ -33,3 +33,32 @@
   src: url(./PTSansBoldItalic.woff2) format('woff2'),
        url(./PTSansBoldItalic.woff) format('woff');
 }
+
+
+@font-face {
+  font-family: 'Arian AMU';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./arianamu.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Arian AMU';
+  font-style: italic;
+  font-weight: 400;
+  src: url('./arianamuitalic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Arian AMU';
+  font-style: normal;
+  font-weight: 700;
+  src: url('./arianamubold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Arian AMU';
+  font-style: italic;
+  font-weight: 700;
+  src: url('./arianamubolditalic.woff2') format('woff2');
+}

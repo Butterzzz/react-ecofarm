@@ -54,7 +54,7 @@ const CardPage = ({ setOrder, setIsVisibleToast }) => {
   }, [id]);
 
   return (
-    <div>
+    <div className="card-page container">
       {card && (
         <>
           <ol className="breadcrumb-list">

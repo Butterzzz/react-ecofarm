@@ -26,12 +26,12 @@ const Contacts = () => {
       'template_tailgcj', form.current,
       'l2YmhnffqhU2B23A0'
     )
-      .then((result) => {
+      .then(() => {
         e.target.reset()
         setIsSuccess(true);
       })
       .catch((err) => {
-        console.log(err);
+        // console.log(err);
         setIsSuccess(false);
       })
       .finally(() => {
@@ -41,7 +41,7 @@ const Contacts = () => {
   }
 
   return (
-    <section className="contacts" id="contacts">
+    <section className="contacts container" id="contacts">
       <h2 className="contacts__title section-title">Контакты</h2>
       <p className="contacts__subtitle section-subtitle">Смело пишите и звоните нам. Мы очень любим общаться с нашими клиентами</p>
 
@@ -127,11 +127,19 @@ const Contacts = () => {
               required >
             </textarea>
           </div>
-          <button type="submit" className="contacts__form-button button" disabled={isLoading}>{isLoading ? 'Отправляем...' : 'Отправить'}</button>
+
+          <button
+            type="submit"
+            className="contacts__form-button button"
+            disabled={isLoading}>{isLoading ? 'Отправляем...' : 'Отправить'}
+          </button>
 
           <div className={`contacts__form-error ${isSuccess && 'contacts__form-error_green'} ${isShowError && 'contacts__form-error_show'}`}>
             <p className="contacts__form-error_text">{isSuccess ? 'Сообщение успешно отправлено' : 'Что-то пошло не так. Попробуйте еще раз'}</p>
-            <GrFormClose type="button" className="contacts__form-error_close" onClick={handleHideError} />
+            <GrFormClose
+              className="contacts__form-error_close"
+              onClick={handleHideError}
+            />
           </div>
 
         </form>

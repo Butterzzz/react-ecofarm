@@ -4,7 +4,7 @@ import { GiEcology, GiGreenhouse, GiHandTruck } from 'react-icons/gi'
 
 const Features = () => {
     return (
-        <section className="features">
+        <section className="features container">
             <h2 className="features__title section-title">Наши преимущества</h2>
             <p className="contacts__subtitle section-subtitle">Каждый день мы усердно работаем, чтобы сделать жизнь наших клиентов лучше и счастливее</p>
 

@@ -4,7 +4,7 @@ import './BlogPage.css'
 
 const BlogPage = () => {
   return (
-    <div>
+    <div className="container">
       <h2>BlogPage</h2>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum laboriosam, eaque impedit repellat eligendi culpa laudantium eos ea, quos distinctio officia qui error ab adipisci, blanditiis repudiandae delectus dolorum placeat.</p>
       <ul>

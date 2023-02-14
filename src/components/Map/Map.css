@@ -1,14 +1,13 @@
 .map {
     position: relative;
-    outline: 1px solid darkmagenta;
 }
 
 .map__info {
+    width: 300px;
     position: absolute;
     top: 50px;
     left: 50px;
-    width: 300px;
-    background-color: #fff;
+    background-color: var(--white);
     opacity: .9;
     border-radius: var(--border-radius);
     padding: 30px;
@@ -21,5 +20,5 @@
 }
 
 .map__address {
-    color: var(--title-color);
+    color: var(--black);
 }

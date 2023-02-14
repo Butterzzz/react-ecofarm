@@ -22,7 +22,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 27px;
-    color: #000;
+    color: var(--black);
     margin: 0 0 8px 0;
 }
 
@@ -36,7 +36,7 @@
     font-weight: 300;
     font-size: 14px;
     line-height: 22px;
-    color: #000;
+    color: var(--black);
     margin: 0 0 12px 0;
 }
 
@@ -48,18 +48,18 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
-    color: #000;
+    color: var(--black);
 }
 
 .card__price_type_discount {
-    color: #bdbdbd;
+    color: var(--card-discount);
     margin: 0 0 0 5px;
     text-decoration: line-through;
 }
 
 .card__buttons-container {
     display: flex;
-    gap: 8px;
+    gap: 0 8px;
 }
 
 .card__button {
@@ -67,18 +67,23 @@
     font-weight: 700;
     font-size: 13px;
     padding: 10px 30px;
+    border: none;
 }
 
 .card__button_type_more {
-    border: none;
+    color: var(--white);
     background-color: var(--main-green);
-    color: #FFF;
 }
 
 .card__button_type_buy {
+    color: var(--main-green);
     background-color: transparent;
     border: 1px solid var(--main-green);
-    color: var(--main-green);
+}
+
+.card__button_type_buy:hover {
+    color: var(--white);
+    background-color: var(--main-green);
 }
 
 .card__chevron-container {
@@ -101,13 +106,13 @@
 }
 
 .card__chevron_new {
-    background-color: #1ea5fc;
+    background-color: var(--card-chevron-new);
 }
 
 .card__chevron_sale {
-    background-color: #FF4A4A;
+    background-color: var(--card-chevron-sale);
 }
 
 .card__chevron_hit {
-    background-color: #8962f8;
+    background-color: var(--card-chevron-hit);
 }

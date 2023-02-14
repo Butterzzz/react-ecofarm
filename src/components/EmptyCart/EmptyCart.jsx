@@ -13,8 +13,8 @@ const EmptyCart = ({ onClose }) => {
             </div>
 
             <div className="empty-cart__buttons-wrapper">
-                <Link to="/" className="empty-cart__button empty-cart__button_return_main button" onClick={onClose}>На главную</Link>
-                <Link to="/catalog/" className="empty-cart__button empty-cart__button_return_catalog button" onClick={onClose}>В каталог</Link>
+                <Link to="/" className="empty-cart__button empty-cart__button_primary button" onClick={onClose}>На главную</Link>
+                <Link to="/catalog/" className="empty-cart__button empty-cart__button_secondary button" onClick={onClose}>В каталог</Link>
             </div>
         </div>
     )

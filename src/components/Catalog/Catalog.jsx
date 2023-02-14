@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Catalog.css'
-import axios from 'axios';
+import axios from 'axios'
 // import Search from '../Search/Search'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
@@ -59,8 +59,8 @@ const Catalog = ({ setOrder, setIsVisibleToast }) => {
   }, [searchValue, apiCards]);
 
   return (
-    <section className="catalog" id="catalog">
-      <h2 className="catalog__title section-title">Каталог</h2>
+    <section className="catalog container" id="catalog">
+      <h2 className="catalog__title section-title">Каталог микрозелени</h2>
 
       <CatalogSearch
         searchValue={searchValue}

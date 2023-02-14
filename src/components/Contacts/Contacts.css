@@ -1,13 +1,12 @@
 .contacts {
-    outline: 1px solid forestgreen;
-    padding: 100px 0 50px;
+    padding: 100px 50px;
 }
 
 .contacts__wrapper {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
+    gap: 0 40px;
 }
 
 .contacts__info {
@@ -16,23 +15,23 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    row-gap: 20px;
+    gap: 20px 0;
 }
 
 .contacts__link {
+    width: 250px;
+    min-height: 68px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 250px;
-    min-height: 68px;
+    gap: 0 10px;
     font-size: 16px;
     line-height: 18px;
-    color: var(--title-color);
+    color: var(--black);
     text-align: center;
+    text-decoration: none;
     padding: 10px 30px;
     border-radius: var(--border-radius);
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -41,8 +40,8 @@
 }
 
 .contacts__link_phone {
-    color: var(--title-color);
-    background-color: #FFF;
+    color: var(--black);
+    background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -57,8 +56,8 @@
 }
 
 .contacts__link_email {
-    color: var(--title-color);
-    background-color: #FFF;
+    color: var(--black);
+    background-color: var(--white);
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
@@ -73,33 +72,33 @@
 }
 
 .contacts__link_whatsapp {
-    color: #FFF;
-    background-color: #25D366;
+    color: var(--white);
+    background-color: var(--wa);
 }
 
 .contacts__link_whatsapp:hover,
 .contacts__link_whatsapp:hover svg {
-    color: #000;
+    color: var(--black);
     transition: var(--transition);
 }
 
 .contacts__link_telegram {
-    color: #FFF;
-    background-color: #1D98DC;
+    color: var(--white);
+    background-color: var(--tg);
 }
 
 .contacts__link_telegram:hover,
 .contacts__link_telegram:hover svg {
-    color: #000;
+    color: var(--black);
     transition: var(--transition);
 }
 
 .contacts__link-icon {
-    color: #FFF;
+    color: var(--white);
 }
 
 .contacts__link-icon_black {
-    color: var(--title-color);
+    color: var(--black);
 }
 
 .contacts__form {
@@ -127,19 +126,19 @@
 .contacts__form-button {
     width: 100%;
     border: none;
-    background-image: linear-gradient(90deg, #82c91e 5%, #38d9a9 95%);
+    background-color: var(--main-green);
     border-radius: var(--border-radius);
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--white);
     padding: 18px;
     transition: var(--transition);
 }
 
 .contacts__form-button:disabled {
-    background-color: lightgray;
+    background-color: var(--light-gray);
     background-image: none;
     pointer-events: none;
 }
@@ -148,11 +147,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #E83030;
-    background-color: #F0BABA;
+    color: var(--error);
+    background-color: var(--error-bg);
+    border-radius: var(--border-radius);
     margin: 20px 0;
     padding: 20px;
-    border-radius: var(--border-radius);
 
     visibility: hidden;
     opacity: 0;
@@ -165,8 +164,8 @@
 }
 
 .contacts__form-error_green {
-    background-color: lightgreen;
-    color: green;
+    color: var(--success);
+    background-color: var(--success-bg);
 }
 
 .contacts__form-error_text {

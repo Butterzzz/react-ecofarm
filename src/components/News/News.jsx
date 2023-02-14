@@ -12,7 +12,7 @@ const News = () => {
     }, [])
 
     return (
-        <section className="news">
+        <section className="news container">
             <h2 className="news__title">Новости магазина</h2>
             <ul>
                 {news.map(item => (

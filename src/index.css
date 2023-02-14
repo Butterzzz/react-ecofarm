@@ -9,12 +9,28 @@
   --white: #FFFFFF;
   --black: #333333;
   --black-08: rgba(51, 51, 51, 0.8);
+  --black-06: rgba(51, 51, 51, 0.6);
 
   --gray: #5C5C5E;
-  --light-gray: #CACAD6;
-  --white-gray: #F6F4F5;
+  --light-gray: #F7F7F7;
+  --gray-icon: #8B8B8B;
+  --gray-border-light: #F3F3F3;
+  --gray-border: #DBDBDB;
+
+  --card-discount: #BDBDBD;
+  --card-chevron-new: #1EA5FC;
+  --card-chevron-sale: #FF4A4A;
+  --card-chevron-hit: #8962f8;
   
   --main-green: #22B742;
+
+  --error: #E83030;
+  --error-bg: #F0BABA;
+  --success: green;
+  --success-bg: lightgreen;
+
+  --tg: #1D98DC;
+  --wa: #25D366;
 
   --transition: all 400ms ease;
   --border-radius: 8px;
@@ -22,15 +38,42 @@
 
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+  color: var(--black);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
   margin: 0;
-  font-family: 'PT Sans', sans-serif;
+  font-family: 'Arian AMU', 'PT Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 50px;
 }

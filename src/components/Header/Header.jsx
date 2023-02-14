@@ -7,7 +7,7 @@ import UserBar from '../../components/UserBar/UserBar'
 const Header = ({ onDrawerClick, itemCount }) => {
     return (
         <header className="header">
-            <div className="header__container">
+            <div className="header__container container">
                 <Logo />
                 <Navigation />
                 <UserBar

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-// import { useNavigate } from 'react-router-dom'
 import './NotFoundPage.css'
+import { Link } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 const NotFoundPage = () => {
   // const navigate = useNavigate();
@@ -14,8 +14,8 @@ const NotFoundPage = () => {
       <h2 className="notFound__title">Страница не найдена...</h2>
       <p className="notFound__subtitle">Возможно, был введен неверный адрес либо страница была удалена</p>
       <div className="notFound__button-container">
-        <Link to="/" className="notFound__button notFound__button_type_main button">Вернуться на главную</Link>
-        <Link to="/catalog" className="notFound__button notFound__button_type_catalog button">Перейти в каталог</Link>
+        <Link to="/" className="notFound__button notFound__button_primary button">Вернуться на главную</Link>
+        <Link to="/catalog" className="notFound__button notFound__button_secondary button">Перейти в каталог</Link>
       </div>
       <p className="notFound__footer">© 2023 EcoFarm | Экоферма по выращиванию микрозелени в Благовещенске</p>
       {/* <button onClick={goBack}>Назад</button> */}

@@ -21,7 +21,7 @@
     font-size: 36px;
     line-height: 54px;
     text-align: center;
-    color: #333333;
+    color: var(--black);
     margin: 0;
     padding: 0 0 185px 0;
 }
@@ -31,7 +31,7 @@
     font-size: 64px;
     line-height: 20px;
     text-align: center;
-    color: #333333;
+    color: var(--black);
     margin: 0;
     padding: 0 0 45px 0;
 }
@@ -42,7 +42,7 @@
     font-size: 24px;
     line-height: 36px;
     text-align: center;
-    color: rgba(51, 51, 51, 0.8);
+    color: var(--black-08);
     margin: 0;
     padding: 0 0 50px 0;
 }
@@ -55,43 +55,40 @@
 }
 
 .notFound__button {
-    width: 180px;
+    width: 300px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 16px;
     line-height: 20px;
-    color: #FFF;
-    background-color: var(--main-green);
     padding: 15px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: var(--border-radius);
-    box-sizing: border-box;
+    cursor: pointer;
 }
 
-.notFound__button_type_main {
-    background-color: #22B742;
-    color: #FFFFFF;
+.notFound__button_primary {
+    background-color: var(--main-green);
+    color: var(--white);
 }
 
-.notFound__button_type_catalog {
-    background-color: #FFFFFF;
-    border: 2px solid #22B742;
-    color: #22B742;
+.notFound__button_secondary {
+    color: var(--main-green);
+    background-color: transparent;
+    border: 1px solid var(--main-green);
 }
 
-.notFound__button_type_catalog:hover {
-    background-color: #22B742;
-    border: 2px solid #22B742;
-    color: #FFFFFF;
-}
+.notFound__button_secondary:hover {
+    color: var(--white);
+    background-color: var(--main-green);
+    border: 1px solid var(--main-green);
+  }
 
 .notFound__footer {
-    font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    font-weight: 400;
     text-align: center;
-    color: #333333;
+    color: var(--black);
     margin: 0;
 }

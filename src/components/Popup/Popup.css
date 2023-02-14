@@ -27,8 +27,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    background-color: #FFF;
+    gap: 20px 0;
+    background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
     position: relative;

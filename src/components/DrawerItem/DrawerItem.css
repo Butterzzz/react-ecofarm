@@ -5,7 +5,7 @@
     width: 100%;
     height: 120px;
     background-color: var(--white);
-    border: 1px solid #F3F3F3;
+    border: 1px solid var(--gray-border-light);
     border-radius: var(--border-radius);
     padding: 20px;
 }
@@ -45,21 +45,21 @@
     width: 32px;
     height: 32px;
     background-color: var(--white);
-    border: 1px solid #DBDBDB;
+    border: 1px solid var(--gray-border);
     border-radius: var(--border-radius);
     cursor: pointer;
 }
 
 .drawer-card__button-icon {
     font-size: 16px;
-    color: #8B8B8B;
+    color: var(--gray-icon);
 }
 
 .drawer-card__title {
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
-    color: var(--title-color);
+    color: var(--black);
     margin: 0 0 10px 0;
 }
 
@@ -67,6 +67,6 @@
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    color: #000000;
+    color: var(--black);
     margin: 0;
 }

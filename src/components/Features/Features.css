@@ -1,14 +1,12 @@
 .features {
-    outline: 1px solid sienna;
-    padding: 100px 0;
+    padding: 100px 50px;
 }
 
 .features__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    gap: 0 40px;
     text-align: center;
-    list-style-type: none;
     margin: 0;
     padding: 0;
 }
@@ -20,7 +18,7 @@
 }
 
 .features__caption {
-    color: var(--title-color);
+    color: var(--black);
     margin: 0 0 10px 0;
 }
 
@@ -28,7 +26,6 @@
     font-size: 16px;
     line-height: 21px;
     font-weight: 400;
-    color: var(--title-color);
-    opacity: 0.6;
+    color: var(--black-06);
     margin: 0;
 }
