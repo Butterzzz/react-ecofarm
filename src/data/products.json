@@ -1,17 +1,17 @@
 [
   {
-    "title": "Product 1",
-    "about": "A description of product 1. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, nulla. Rem, aliquam! Cumque, nulla. Rem, aliquam!",
+    "title": "Редис",
+    "about": "Один из самых быстрорастущих и доступных видов микрозелени, обладающий острым вкусом и красивым красным цветом",
     "image": "https://picsum.photos/300/400",
     "price": 150,
     "discount": 0.3,
     "isHit": true,
     "isSale": false,
-    "isNew": true
+    "isNew": false
   },
   {
-    "title": "Product 2",
-    "about": "A description of product 2. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque, nulla. Rem, aliquam! Cumque, nulla. Rem, aliquam!",
+    "title": "Горчица",
+    "about": "Имеет пикантный вкус и хорошо сочетается с другими видами микрозелени",
     "image": "https://picsum.photos/300/400",
     "price": 200,
     "discount": 0.2,
@@ -20,8 +20,8 @@
     "isNew": false
   },
   {
-    "title": "Product 3",
-    "about": "A description of product 3. Cumque, nulla. Rem, aliquam!",
+    "title": "Кресс-салат",
+    "about": "Обладает пряным вкусом и подходит для использования в салатах, бутербродах и на пицце",
     "image": "https://picsum.photos/300/400",
     "price": 250,
     "discount": 0,
@@ -30,8 +30,8 @@
     "isNew": true
   },
   {
-    "title": "Product 4",
-    "about": "A description of product 4. Lorem ipsum, dolor sit amet consectetur adipisicing elit.",
+    "title": "Руккола",
+    "about": "Имеет острый вкус и подходит для использования в салатах и на бутербродах",
     "image": "https://picsum.photos/300/400",
     "price": 300,
     "discount": 0.5,
@@ -40,8 +40,8 @@
     "isNew": false
   },
   {
-    "title": "Product 5",
-    "about": "A description of product 5",
+    "title": "Базилик",
+    "about": "Имеет ароматный вкус и подходит для использования в итальянских блюдах, таких как паста и пицца",
     "image": "https://picsum.photos/300/400",
     "price": 350,
     "discount": 0.1,
@@ -50,8 +50,8 @@
     "isNew": true
   },
   {
-    "title": "Product 6",
-    "about": "A description of product 6",
+    "title": "Петрушка",
+    "about": "Богатый источник витамина С и других питательных веществ, имеет легкий вкус с нотками аниса и кориандра",
     "image": "https://picsum.photos/300/400",
     "price": 400,
     "discount": 0.4,
@@ -60,8 +60,8 @@
     "isNew": false
   },
   {
-    "title": "Product 7",
-    "about": "A description of product 7",
+    "title": "Подсолнечник",
+    "about": "Обладает вкусом молодых семечек. Обычно добавляют в салаты и гарниры.Насыщена полезными веществами, в том числе витамином Е и цинком",
     "image": "https://picsum.photos/300/400",
     "price": 450,
     "discount": 0,
@@ -70,8 +70,8 @@
     "isNew": true
   },
   {
-    "title": "Product 8",
-    "about": "A description of product 8",
+    "title": "Горох",
+    "about": "Богат фосфором, протеинами и клетчаткой. По вкусу сладковат, как молодой горошек. Превосходен в салатах, гарнирах, супах",
     "image": "https://picsum.photos/300/400",
     "price": 500,
     "discount": 0.9,
@@ -80,8 +80,8 @@
     "isNew": false
   },
   {
-    "title": "Product 9",
-    "about": "A description of product 9",
+    "title": "Дайкон",
+    "about": "По вкусу эта микрозелень напоминает редьку, а по внешнему виду — редис. Отлично заменяет специи и наполняет рацион целым набором ценных витаминов и питательных веществ",
     "image": "https://picsum.photos/300/400",
     "price": 175,
     "discount": 0.1,
@@ -90,8 +90,8 @@
     "isNew": false
   },
   {
-    "title": "Product 10",
-    "about": "A description of product 10",
+    "title": "Шпинат",
+    "about": "Богат железом, витаминами А и С, а также другими питательными веществами, имеет нежный вкус и хорошо сочетается с другими видами микрозелени",
     "image": "https://picsum.photos/300/400",
     "price": 250,
     "discount": 0.1,
@@ -100,8 +100,8 @@
     "isNew": false
   },
   {
-    "title": "Product 11",
-    "about": "A description of product 10",
+    "title": "Кинза",
+    "about": "Имеет яркий и острый вкус, который отлично подходит для использования в мексиканской и азиатской кухне",
     "image": "https://picsum.photos/300/400",
     "price": 285,
     "discount": 0,
@@ -110,11 +110,31 @@
     "isNew": false
   },
   {
-    "title": "Product 12",
-    "about": "A description of product 12",
+    "title": "Мята",
+    "about": "Имеет освежающий и пряный вкус, который отлично подходит для использования в напитках и десертах",
     "image": "https://picsum.photos/300/400",
     "price": 185,
     "discount": 0.1,
+    "isHit": false,
+    "isSale": false,
+    "isNew": false
+  },
+  {
+    "title": "Ромэн",
+    "about": "Имеет сладковатый и нежный вкус и хорошо сочетается с другими видами микрозелени",
+    "image": "https://picsum.photos/300/400",
+    "price": 285,
+    "discount": 0,
+    "isHit": false,
+    "isSale": false,
+    "isNew": true
+  },
+  {
+    "title": "Лук-порей",
+    "about": "Имеет сладковатый и нежный вкус и обладает антиоксидантными свойствами",
+    "image": "https://picsum.photos/300/400",
+    "price": 285,
+    "discount": 0,
     "isHit": false,
     "isSale": false,
     "isNew": false

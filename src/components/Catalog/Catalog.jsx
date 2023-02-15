@@ -49,8 +49,7 @@ const Catalog = ({ setOrder, setIsVisibleToast }) => {
 
   useEffect(() => {
     const filteredData = apiCards.filter((item) => {
-      return item.title.toLowerCase().includes(searchValue.toLowerCase())
-        || item.about.toLowerCase().includes(searchValue.toLowerCase());
+      return item.title.toLowerCase().includes(searchValue.toLowerCase());
     });
     if (filteredData.length === 0) {
       setNoFound(true);
