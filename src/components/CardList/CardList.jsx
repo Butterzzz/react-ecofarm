@@ -2,7 +2,7 @@ import React from 'react'
 import './CardList.css'
 import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
-
+import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
 
 const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast }) => {
   return (
@@ -28,6 +28,9 @@ const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast }) =
         ))
         }
       </ul>
+
+      <LoadMoreButton />
+
     </section>
   )
 }
