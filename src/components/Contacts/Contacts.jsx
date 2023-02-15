@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import './Contacts.css'
 import emailjs from '@emailjs/browser'
 import { GrFormClose } from 'react-icons/gr'
@@ -39,6 +39,13 @@ const Contacts = () => {
         setIsLoading(false);
       });
   }
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsShowError(false);
+    }, 6000);
+    return () => clearTimeout(timer);
+  }, [isShowError]);
 
   return (
     <section className="contacts container" id="contacts">
