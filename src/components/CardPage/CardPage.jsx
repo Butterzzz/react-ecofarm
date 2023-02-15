@@ -74,7 +74,7 @@ const CardPage = ({ setOrder, setIsVisibleToast }) => {
           <img src={card.image} alt={card.title} />
           <p>{card.about}</p>
           <p>{card.price}</p>
-          <p>{discount}</p>
+          <p>{discount.toFixed(0)}</p>
 
           <button className="card__button button card__button_type_buy" onClick={handleBuy}>
             Купить
