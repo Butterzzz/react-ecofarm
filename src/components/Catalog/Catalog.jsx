@@ -12,6 +12,7 @@ const Catalog = ({ setOrder, setIsVisibleToast }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNoFound] = useState(false);
 
+
   // function loadingCards() {
   //   setIsLoading(true);
   //   fetch('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/cards')

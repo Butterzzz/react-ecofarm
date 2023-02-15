@@ -9,7 +9,7 @@ const LoadMoreButton = ({ onLoadMore }) => {
                 className="load-more__button button"
                 onClick={onLoadMore}
             >
-                Еще
+                Загрузить еще
             </button>
         </div>
     )

@@ -16,3 +16,7 @@
     border-radius: var(--border-radius);
     cursor: pointer;
 }
+
+.load-more__button_type_hidden {
+    visibility: hidden;
+  }
