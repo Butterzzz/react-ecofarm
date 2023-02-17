@@ -4,12 +4,12 @@ import './Layout.css'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 
-const Layout = ({ onDrawerClick, itemCount }) => {
+const Layout = ({ onDrawerClick, orderCount }) => {
     return (
         <>
             <Header
                 onDrawerClick={onDrawerClick}
-                itemCount={itemCount}
+                orderCount={orderCount}
             />
 
             <main className="content">

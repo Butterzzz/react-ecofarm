@@ -2,14 +2,14 @@ import React from 'react'
 import './UserBar.css'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 
-export const UserBar = ({ onDrawerClick, itemCount }) => {
+export const UserBar = ({ onDrawerClick, orderCount }) => {
 
     return (
         <div className="userBar">
             <button className="userBar__cart" onClick={onDrawerClick}>
                 <MdOutlineShoppingCart className="userBar__icon" />
-                {itemCount > 0 &&
-                    <span className="userBar__badge">{itemCount}</span>
+                {orderCount > 0 &&
+                    <span className="userBar__badge">{orderCount}</span>
                 }
                 <span className="userBar__text">Корзина</span>
             </button>

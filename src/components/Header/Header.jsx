@@ -4,7 +4,7 @@ import Logo from '../../components/Logo/Logo'
 import Navigation from '../../components/Navigation/Navigation'
 import UserBar from '../../components/UserBar/UserBar'
 
-const Header = ({ onDrawerClick, itemCount }) => {
+const Header = ({ onDrawerClick, orderCount }) => {
     return (
         <header className="header">
             <div className="header__container container">
@@ -12,7 +12,7 @@ const Header = ({ onDrawerClick, itemCount }) => {
                 <Navigation />
                 <UserBar
                    onDrawerClick={onDrawerClick}
-                   itemCount={itemCount}
+                   orderCount={orderCount}
                 />
             </div>
         </header>

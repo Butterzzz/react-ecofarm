@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import axios from 'axios';
+import axios from 'axios'
 import './App.css'
 import Layout from '../Layout/Layout'
 import Main from '../Main/Main'
@@ -18,37 +18,15 @@ import { IconContext } from 'react-icons'
 const App = () => {
   const [isVideoPopupOpen, setIsVideoPopupOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const [order, setOrder] = useState([]); // Корзина
+  const [order, setOrder] = useState(loadCartFromLocalStorage()); // Корзина
   const [isVisibleToast, setIsVisibleToast] = useState(false); // Всплывающая уведомляшка
-  const [itemCount, setItemCount] = useState(0); // Количество товаров в корзине для бейджа
-  // const [quantity, setQuantity] = useState(1);
-
-  function addItem() {
-    setItemCount(itemCount + 1);
-  }
+  const [orderCount, setOrderCount] = useState(0); // Количество товаров в корзине для бейджа
 
   useEffect(() => {
-    setItemCount(order.length)
-  }, [order])
-
-  function removeItem() {
-    setItemCount(itemCount - 1);
-  }
-
-  // Загрузка корзины с сервера mockAPI
-  function loadingOrders() {
-    axios.get('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order')
-      .then((resOrders) => {
-        setOrder(resOrders.data)
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  }
-
-  useEffect(() => {
-    loadingOrders();
-  }, [])
+    let count = 0;
+    order.forEach(item => count += item.quantity);
+    setOrderCount(count);
+  }, [order]);
 
   function scrollDisable() {
     document.body.style.overflow = "hidden"
@@ -75,64 +53,55 @@ const App = () => {
   }
 
   // Добавление товара в корзину
-  // const addToOrder = (card) => {
-  //   console.log(card, 'Добавили объект карточки');
-  //   setOrder(prev => [...prev, card]);
-  // };
+  const handleAddToOrder = (card) => {
+    // Проверяем, есть ли товар с таким идентификатором в корзине
+    const itemExists = order.some((orderItem) => orderItem.cardId === card.cardId);
 
-  // Добавление товара в корзину
-  const addToOrder = (goodsItem) => {
-    axios.post('https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order', goodsItem)
-    let quantity = 1;
-
-    const indexInOrder = order.findIndex(
-      (item) => item.id === goodsItem.id
-    );
-
-    if (indexInOrder > -1) {
-      quantity = order[indexInOrder].quantity + 1;
-
-      setOrder(order.map((item) => {
-        if (item.id !== goodsItem.id) return item;
-
-        return {
-          id: item.id,
-          title: item.title,
-          price: item.price,
-          image: item.image,
-          quantity,
-        };
-      }),
-      );
+    // Если товар уже есть в корзине, увеличиваем его количество
+    if (itemExists) {
+      const newItems = order.map((orderItem) => {
+        if (orderItem.cardId === card.cardId) {
+          return { ...orderItem, quantity: orderItem.quantity + 1 };
+        } else {
+          return orderItem;
+        }
+      });
+      setOrder(newItems);
     } else {
-      setOrder([
-        ...order,
-        {
-          id: goodsItem.id,
-          title: goodsItem.title,
-          price: goodsItem.price,
-          image: goodsItem.image,
-          quantity,
-        },
-      ],
-      );
+      // Если товара нет в корзине, добавляем его в список товаров
+      setOrder([...order, { ...card, quantity: 1 }]);
     }
-    addItem();
-  };
-
-  // console.log(order);
+  }
 
   // Удаление товара из корзины
-  const removeFromOrder = (id) => {
-    console.log(id);
+  const removeFromOrder = (cardId) => {
+    // console.log(cardId);
     // дай мне предыдущий массив заказов,
     // возьми все что в нем есть,
     // пробежишь по нему,
     // отфильтруй тот элемент, у которого id тот, который я тебе передал
-    setOrder((prev) => prev.filter((item) => item.id !== id));
-    axios.delete(`https://63d92eb9baa0f79e09b6c7dd.mockapi.io/catalog/order/${id}`)
-    removeItem();
+    setOrder((prev) => prev.filter((item) => item.cardId !== cardId));
+    localStorage.removeItem("order");
   };
+
+  // Сохраняем состояние корзины в localStorage
+  function saveCartToLocalStorage(order) {
+    localStorage.setItem("order", JSON.stringify(order));
+  }
+
+  // После каждого обновления состояния корзины, вызываем функцию
+  useEffect(() => {
+    saveCartToLocalStorage(order);
+  }, [order]);
+
+  // Загрузка состояния корзины из localStorage при инициализации компонента
+  function loadCartFromLocalStorage() {
+    const order = localStorage.getItem("order");
+    if (order) {
+      return JSON.parse(order);
+    }
+    return [];
+  }
 
   return (
     <div className="page">
@@ -141,17 +110,17 @@ const App = () => {
           <Route path="/" element={
             <Layout
               onDrawerClick={handleDrawerClick}
-              itemCount={itemCount}
+              orderCount={orderCount}
             />}
           >
             <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={
               <Catalog
-                setOrder={addToOrder}
+                setOrder={handleAddToOrder}
                 setIsVisibleToast={setIsVisibleToast}
               />}
             />
-            <Route path="catalog/cards/:id" element={<CardPage setOrder={addToOrder} setIsVisibleToast={setIsVisibleToast}/>} />
+            <Route path="catalog/cards/:id" element={<CardPage setOrder={handleAddToOrder} setIsVisibleToast={setIsVisibleToast} />} />
             <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />

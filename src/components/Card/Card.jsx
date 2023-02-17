@@ -9,11 +9,12 @@ const Card = ({ card, setOrder, setIsVisibleToast }) => {
         // onBuy(card);
 
         setOrder({
-            id: card._id,
+            cardId: card._id,
             image: card.image,
             title: card.title,
-            price: newPrice
+            price: newPrice,
         })
+        
         setIsVisibleToast(true);
         setTimeout(() => {
             setIsVisibleToast(false);

@@ -5,7 +5,7 @@ import axios from 'axios'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
 
-const Catalog = ({ setOrder, setIsVisibleToast }) => {
+const Catalog = ({ setOrder, setIsVisibleToast, onBuy }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
   const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильтрованные карточки
   const [searchValue, setSearchValue] = useState(''); // Поисковое слово
