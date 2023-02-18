@@ -3,7 +3,7 @@ import './Drawer.css'
 import DrawerList from '../DrawerList/DrawerList'
 import { MdOutlineClose } from 'react-icons/md'
 
-const Drawer = ({ isOpen, onClose, order, setOrder }) => {
+const Drawer = ({ isOpen, onClose, order, setOrder, onCheckout }) => {
 
     const handleClose = (evt) => {
         if (evt.target.classList.contains('drawer_opened')) {
@@ -40,7 +40,12 @@ const Drawer = ({ isOpen, onClose, order, setOrder }) => {
                             }, 0)}{' '}
                             ₽
                         </div>
-                        <button className="drawer__button drawer__button_type_checkout button">Оформить заказ</button>
+                        <button
+                            className="drawer__button drawer__button_type_checkout button"
+                            onClick={onCheckout}
+                        >
+                            Оформить заказ
+                        </button>
                     </div>
                 }
 

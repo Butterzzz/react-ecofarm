@@ -103,6 +103,29 @@ const App = () => {
     return [];
   }
 
+  //  Оформление заказа
+  function handleCheckout() {
+    // Создаем массив товаров с их количеством
+    const products = order.map((item) => ({
+      cardId: item.cardId,
+      title: item.title,
+      price: item.price,
+      quantity: item.quantity,
+    }));
+
+    // console.log({ products });
+
+    // Отправляем запрос на сервер с информацией о товарах
+    axios.post('http://localhost:3003/order', { products })
+      .then((response) => {
+        console.log('Заказ успешно отправлен на сервер', response.data);
+        setOrder([]);
+      })
+      .catch((error) => {
+        console.error('Ошибка при отправке заказа на сервер', error);
+      });
+  }
+
   return (
     <div className="page">
       <IconContext.Provider value={{ className: "react-icons" }}>
@@ -120,7 +143,12 @@ const App = () => {
                 setIsVisibleToast={setIsVisibleToast}
               />}
             />
-            <Route path="catalog/cards/:id" element={<CardPage setOrder={handleAddToOrder} setIsVisibleToast={setIsVisibleToast} />} />
+            <Route path="catalog/cards/:id" element={
+              <CardPage
+                setOrder={handleAddToOrder}
+                setIsVisibleToast={setIsVisibleToast}
+              />}
+            />
             <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />
@@ -135,13 +163,21 @@ const App = () => {
           onClose={closeAllPopups}
           order={order}
           setOrder={removeFromOrder}
+          onCheckout={handleCheckout}
         />
 
         <Popup
           isOpen={isVideoPopupOpen}
-          onClose={closeAllPopups}
-        >
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/7SW7BEJC56s" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+          onClose={closeAllPopups}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/7SW7BEJC56s"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen>
+          </iframe>
         </Popup>
 
         <Toast
