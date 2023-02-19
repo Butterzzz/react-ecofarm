@@ -43,7 +43,7 @@
     background-color: var(--light-gray);
     cursor: pointer;
     border-radius: var(--border-radius);
-    z-index: 100;
+    z-index: 10;
 }
 
 .search__button_clear {

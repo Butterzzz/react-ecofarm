@@ -3,9 +3,9 @@ import './Navigation.css'
 import { NavLink } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
-const Navigation = () => {
+const Navigation = ({ isOpen}) => {
   return (
-    <nav className="menu">
+    <nav className={`menu ${isOpen ? 'menu_active' : ''}`}>
       <NavLink to="/catalog" className="menu__link link">Каталог</NavLink>
       <HashLink to="/#order" className="menu__link link">Как заказать</HashLink>
       <NavLink to="/blog" className="menu__link link">Блог</NavLink>

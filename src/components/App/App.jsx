@@ -136,7 +136,7 @@ const App = () => {
               orderCount={orderCount}
             />}
           >
-            <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
+            {/* <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
             <Route path="catalog" element={
               <Catalog
                 setOrder={handleAddToOrder}
@@ -153,7 +153,7 @@ const App = () => {
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />
               <Route path="news/:id" element={<NewsPage />} />
-            </Route >
+            </Route > */}
           </Route>
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
