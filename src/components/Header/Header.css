@@ -20,6 +20,10 @@
 }
 
 @media screen and (max-width: 420px) {
+  .header {
+    height: 70px;
+  }
+
   .header__container {
     padding: 18px 14px;
   }

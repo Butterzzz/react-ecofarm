@@ -77,6 +77,10 @@
 }
 
 @media screen and (max-width: 420px) {
+    .empty-cart__image {
+        height: 100px;
+    }
+
     .empty-cart__text {
         width: 100%;
     }

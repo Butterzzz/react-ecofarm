@@ -136,8 +136,8 @@ const App = () => {
               orderCount={orderCount}
             />}
           >
-            {/* <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
-            <Route path="catalog" element={
+            <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
+            {/* <Route path="catalog" element={
               <Catalog
                 setOrder={handleAddToOrder}
                 setIsVisibleToast={setIsVisibleToast}
@@ -148,8 +148,8 @@ const App = () => {
                 setOrder={handleAddToOrder}
                 setIsVisibleToast={setIsVisibleToast}
               />}
-            />
-            <Route path="blog" element={<BlogPage />} >
+            /> */}
+            {/* <Route path="blog" element={<BlogPage />} >
               <Route path="recipes" element={<p>Рецепты</p>} />
               <Route path="news" element={<News />} />
               <Route path="news/:id" element={<NewsPage />} />
