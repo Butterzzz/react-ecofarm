@@ -12,12 +12,13 @@ const Header = ({ onDrawerClick, orderCount }) => {
         <header className="header">
             <div className="header__container container">
                 <Logo />
-                <Navigation 
+                <Navigation
                     isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                 />
                 <UserBar
-                   onDrawerClick={onDrawerClick}
-                   orderCount={orderCount}
+                    onDrawerClick={onDrawerClick}
+                    orderCount={orderCount}
                 />
                 <HamburgerMenu
                     isOpen={isOpen}
