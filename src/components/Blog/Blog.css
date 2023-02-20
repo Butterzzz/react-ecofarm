@@ -1,3 +1,15 @@
 .blog {
     padding: 100px 50px;
 }
+
+@media screen and (max-width: 768px) {
+    .blog {
+        padding: 100px 30px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .blog {
+        padding: 50px 14px;
+    }
+}

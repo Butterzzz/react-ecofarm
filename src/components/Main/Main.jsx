@@ -16,10 +16,10 @@ const Main = ({ onClickAbout }) => {
       <Hero onClickAbout={onClickAbout}/>
       <Features />
       {/* <Gallery />
-      <Slider />
+      <Slider /> */}
       <Order />
       <Blog />
-      <Reviews /> */}
+      <Reviews />
       <Contacts />
       {/* <Map /> */}
     </>
