@@ -46,7 +46,11 @@
     color: var(--black-08);
 }
 
-@media screen and (max-width: 768px) {}
+@media screen and (max-width: 768px) {
+    .userBar__cart:hover.userBar__cart svg {
+        color: transparent;
+    }
+}
 
 @media screen and (max-width: 420px) {
     .userBar__icon {

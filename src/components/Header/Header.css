@@ -1,26 +1,26 @@
 .header {
-    height: 80px;
-    background-color: var(--white);
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
-    z-index: 90;
+  height: 80px;
+  background-color: var(--white);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 90;
 }
 
 .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
 }
 
 @media screen and (max-width: 768px) {
-    .header__container {
-      padding: 18px 30px;
-      gap: 0 20px;
-    }
+  .header__container {
+    padding: 18px 30px;
+    gap: 0 20px;
   }
-  
-  @media screen and (max-width: 420px) {
-    .header__container {
-      padding: 18px 14px;
-    }
+}
+
+@media screen and (max-width: 420px) {
+  .header__container {
+    padding: 18px 14px;
   }
+}
