@@ -14,7 +14,7 @@ const Card = ({ card, setOrder, setIsVisibleToast }) => {
             title: card.title,
             price: newPrice,
         })
-        
+
         setIsVisibleToast(true);
         setTimeout(() => {
             setIsVisibleToast(false);

@@ -62,10 +62,10 @@ const Catalog = ({ setOrder, setIsVisibleToast, onBuy }) => {
     <section className="catalog container" id="catalog">
       <h2 className="catalog__title section-title">Каталог микрозелени</h2>
 
-      <CatalogSearch
+      {/* <CatalogSearch
         searchValue={searchValue}
         setSearchValue={setSearchValue}
-      />
+      /> */}
 
       <CardList
         cards={filteredCatalog}

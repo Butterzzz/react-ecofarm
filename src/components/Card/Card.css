@@ -1,9 +1,11 @@
 .card {
     position: relative;
+    width: 292px;
+    height: 610px;
 }
 
 .card__image-container {
-    width: 360px;
+    max-width: 360px;
     height: 400px;
     background-image: url(../../images/card_placeholder.png);
     background-repeat: no-repeat;
@@ -97,7 +99,7 @@
 
 .card__chevron {
     border-radius: var(--border-radius);
-    color: #FFF;
+    color: var(--white);
     font-size: 12px;
     line-height: 14px;
     font-weight: 700;
@@ -115,4 +117,14 @@
 
 .card__chevron_hit {
     background-color: var(--card-chevron-hit);
+}
+
+@media screen and (max-width: 420px) {
+    .card__image-container {
+        width: 292px;
+    }
+
+    .card__description {
+        max-width: 292px;
+    }
 }
