@@ -45,3 +45,15 @@
     font-weight: 400;
     color: var(--black-08);
 }
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 420px) {
+    .userBar__icon {
+        font-size: 30px;
+    }
+
+    .userBar__text {
+        display: none;
+    }
+}

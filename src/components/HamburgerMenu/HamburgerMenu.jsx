@@ -9,10 +9,6 @@ const HamburgerMenu = ({ isOpen, setIsOpen }) => {
         setIsOpen(!isOpen);
     }
 
-    // function handleMenuItemClick() {
-    //     setIsOpen(false);
-    // }
-
     return (
         <div className='hamburger-menu' onClick={toggleMenu}>
             {isOpen ?

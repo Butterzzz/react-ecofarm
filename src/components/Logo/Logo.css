@@ -29,3 +29,26 @@
     color: var(--black-06);
     margin: 0;
 }
+
+@media screen and (max-width: 768px) {
+    .logo {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .logo__image {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo__title {
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .logo_subtitle {
+        font-size: 12px;
+        line-height: 15px;
+    }
+}
