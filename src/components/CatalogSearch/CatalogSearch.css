@@ -54,12 +54,20 @@
 }
 
 @media screen and (max-width: 768px) {
+    .search {
+        padding: 60px 0;
+    }
+
     .search__input {
         max-width: 360px;
     }
 }
 
 @media screen and (max-width: 420px) {
+    .search {
+        padding: 40px 0;
+    }
+
     .search__input {
         max-width: 292px;
     }

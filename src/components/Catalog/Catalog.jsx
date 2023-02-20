@@ -5,13 +5,12 @@ import axios from 'axios'
 import CardList from '../CardList/CardList'
 import CatalogSearch from '../CatalogSearch/CatalogSearch'
 
-const Catalog = ({ setOrder, setIsVisibleToast, onBuy }) => {
+const Catalog = ({ setOrder, setIsVisibleToast }) => {
   const [apiCards, setApiCards] = useState([]); // Массив с данными с сервера
   const [filteredCatalog, setFilteredCatalog] = useState([]); // Отфильтрованные карточки
   const [searchValue, setSearchValue] = useState(''); // Поисковое слово
   const [isLoading, setIsLoading] = useState(false);
   const [notFound, setNoFound] = useState(false);
-
 
   // function loadingCards() {
   //   setIsLoading(true);
@@ -73,6 +72,7 @@ const Catalog = ({ setOrder, setIsVisibleToast, onBuy }) => {
         setOrder={setOrder}
         notFound={notFound}
         setIsVisibleToast={setIsVisibleToast}
+        searchValue={searchValue}
       />
 
     </section>

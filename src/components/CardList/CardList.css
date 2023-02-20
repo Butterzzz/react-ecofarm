@@ -8,9 +8,21 @@
   padding: 0;
 }
 
-.cardlist__errors {
-  font-size: 32px;
+.cards__errors-title {
+  font-size: 24px;
+  line-height: 31px;
   color: var(--black);
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.cards__errors-text {
+  font-size: 16px;
+  line-height: 21px;
+  color: var(--black-06);
   margin: 0;
   padding: 0;
   text-align: center;

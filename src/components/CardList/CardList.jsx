@@ -4,7 +4,7 @@ import Card from '../Card/Card'
 import Preloader from '../Preloader/Preloader'
 import LoadMoreButton from '../LoadMoreButton/LoadMoreButton'
 
-const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast }) => {
+const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast, searchValue }) => {
   const [visibleCards, setVisibleCards] = useState(6); // Кол-во товаров для отображения
 
   const handleLoadMore = () => {
@@ -19,7 +19,11 @@ const CardList = ({ isLoading, notFound, cards, setOrder, setIsVisibleToast }) =
       }
 
       {(notFound && cards.length === 0 && !isLoading) &&
-        <p className="cardlist__errors">Ничего не найдено</p>
+        <>
+          <p className="cards__errors-title">Ничего не найдено</p>
+          {searchValue.length > 0 &&
+            <p className="cards__errors-text">По запросу "{searchValue}" ничего не нашлось, попробуйте изменить запрос</p>}
+        </>
       }
 
       <ul className="cards__list">
