@@ -1,10 +1,16 @@
 .notFound {
-    height: 100vh;
+    min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
-    padding: 85px 0 45px 0;
+    justify-content: space-around;
+}
+
+.notFound__logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px 0;
 }
 
 .notFound__logo {
@@ -17,45 +23,41 @@
 }
 
 .notFound__logo-title {
-    font-weight: 700;
     font-size: 36px;
     line-height: 54px;
+    font-weight: 700;
     text-align: center;
     color: var(--black);
     margin: 0;
-    padding: 0 0 185px 0;
 }
 
 .notFound__title {
-    font-weight: 700;
     font-size: 64px;
-    line-height: 20px;
+    line-height: 83px;
+    font-weight: 700;
     text-align: center;
     color: var(--black);
     margin: 0;
-    padding: 0 0 45px 0;
+    padding: 0 0 10px 0;
 }
 
 .notFound__subtitle {
-    max-width: 418px;
-    font-weight: 400;
     font-size: 24px;
     line-height: 36px;
+    font-weight: 400;
     text-align: center;
     color: var(--black-08);
     margin: 0;
-    padding: 0 0 50px 0;
 }
 
 .notFound__button-container {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 0 0 315px 0;
+    gap: 0 20px;
 }
 
 .notFound__button {
-    width: 300px;
+    min-width: 300px;
     height: 60px;
     display: flex;
     justify-content: center;
@@ -82,7 +84,7 @@
     color: var(--white);
     background-color: var(--main-green);
     border: 1px solid var(--main-green);
-  }
+}
 
 .notFound__footer {
     font-size: 16px;
@@ -91,4 +93,40 @@
     text-align: center;
     color: var(--black);
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .notFound__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .notFound__logo-title {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .notFound__title {
+        width: 100%;
+        font-size: 24px;
+        line-height: 31px;
+    }
+
+    .notFound__subtitle {
+        width: 100%;
+        font-size: 16px;
+        line-height: 21px;
+    }
+
+    .notFound__button-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px 0;
+    }
+
+    .notFound__footer {
+        font-size: 16px;
+        line-height: 21px;
+    }
 }
