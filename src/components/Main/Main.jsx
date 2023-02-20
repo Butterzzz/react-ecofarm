@@ -14,10 +14,10 @@ const Main = ({ onClickAbout }) => {
   return (
     <>
       <Hero onClickAbout={onClickAbout}/>
-      {/* <Features />
-      <Gallery /> */}
-      {/* <Slider /> */}
-      {/* <Order />
+      <Features />
+      {/* <Gallery />
+      <Slider />
+      <Order />
       <Blog />
       <Reviews />
       <Contacts />

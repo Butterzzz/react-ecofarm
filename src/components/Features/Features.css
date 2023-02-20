@@ -18,6 +18,8 @@
 }
 
 .features__caption {
+    font-size: 20px;
+    line-height: 26px;
     color: var(--black);
     margin: 0 0 10px 0;
 }
@@ -28,4 +30,32 @@
     font-weight: 400;
     color: var(--black-06);
     margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .features {
+        padding: 100px 30px;
+    }
+
+    .features__list {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .features {
+        padding: 100px 14px;
+    }
+
+    .features__list {
+        grid-template-columns: 1fr;
+        gap: 40px 0;
+    }
+
+    .features__icon {
+        font-size: 60px;
+        color: var(--main-green);
+        margin: 0 0 20px 0;
+    }
 }
