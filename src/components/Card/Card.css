@@ -1,7 +1,6 @@
 .card {
     position: relative;
-    width: 292px;
-    height: 610px;
+    max-height: 610px;
 }
 
 .card__image-container {
@@ -121,10 +120,11 @@
 
 @media screen and (max-width: 420px) {
     .card__image-container {
-        width: 292px;
+        max-width: 292px;
     }
 
     .card__description {
         max-width: 292px;
     }
+    
 }
