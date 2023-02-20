@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './Popup.css'
-import { GrFormClose } from 'react-icons/gr'
+import { MdOutlineClose } from 'react-icons/md'
 
 const Popup = ({ children, isOpen, onClose }) => {
 
@@ -27,9 +27,18 @@ const Popup = ({ children, isOpen, onClose }) => {
     return (
         <div className={`popup popup_type_video ${isOpen && "popup_opened"}`} onClick={handleClose}>
             <div className="popup__container">
-                <h2 className="popup__heading">Технология выращивания семян микрозелени</h2>
-                {children}
-                <GrFormClose className="popup__button popup__button_action_close" onClick={onClose} />
+                <div className="popup__top-wrapper">
+                    <h2 className="popup__title">Технология выращивания семян микрозелени</h2>
+
+                    <button className="popup__button popup__button_type_close button"
+                        aria-label="Закрыть модальное окно"
+                        onClick={onClose}>
+                        <MdOutlineClose className="popup__button-icon" />
+                    </button>
+                </div>
+                <div className="popup__video">
+                    {children}
+                </div>
             </div>
         </div>
     )
