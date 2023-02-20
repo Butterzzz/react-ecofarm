@@ -19,9 +19,9 @@ const Main = ({ onClickAbout }) => {
       <Slider />
       <Order />
       <Blog />
-      <Reviews />
+      <Reviews /> */}
       <Contacts />
-      <Map /> */}
+      {/* <Map /> */}
     </>
   )
 }
