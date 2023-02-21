@@ -1,3 +1,83 @@
-.grid {
-    outline: 1px solid fuchsia;
+.gallery {}
+
+.gallery__container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 0;
+}
+
+.categories__container {
+    display: flex;
+    gap: 0 10px;
+}
+
+.category-about {
+}
+
+.category-about__text {
+    text-align: center;
+    margin: 0;
+}
+
+.categories button {
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.categories button.active,
+.categories button:hover {
+    color: #fff;
+    background-color: #333;
+}
+
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+}
+
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.image-wrapper:hover .image-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+}
+
+.image-title {
+    margin: 10px;
 }
