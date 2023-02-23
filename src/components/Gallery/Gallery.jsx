@@ -1,27 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Gallery.css'
-
-const categories = [
-    { id: '1', name: 'Виды микрозелени', about: 'Фотографии различных видов микрозелени', },
-    { id: '2', name: 'Упаковка', about: 'Фотографии упаковок микрозелени разного размера и типа, включая картонные коробки, пакеты и пластиковые контейнеры', },
-    { id: '3', name: 'Урожай', about: 'Фотографии готовой микрозелени в момент сбора и упаковки', },
-    { id: '4', name: 'Рецепты', about: ' Изображения блюд, в которые можно добавить микрозелень', },
-    { id: '5', name: 'Производство', about: 'Изображения гидропонных установок для выращивания микрозелени в условиях ограниченного пространства', },
-];
-
-const images = [
-    { id: '1', title: 'Image 1', category: 'Виды микрозелени', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '2', title: 'Image 2', category: 'Упаковка', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '3', title: 'Image 3', category: 'Урожай', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '4', title: 'Image 4', category: 'Виды микрозелени', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '5', title: 'Image 5', category: 'Упаковка', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '6', title: 'Image 6', category: 'Урожай', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '7', title: 'Image 7', category: 'Рецепты', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '8', title: 'Image 8', category: 'Рецепты', url: 'https://source.unsplash.com/random/600x400' },
-    { id: '9', title: 'Image 9', category: 'Производство', url: 'https://source.unsplash.com/random/600x400' },
-];
+import axios from 'axios'
 
 const Gallery = () => {
+    const [galleryImages, setGalleryImages] = useState([]);
+    const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [selectedCategoryAbout, setSelectedCategoryAbout] = useState('');
 
@@ -30,7 +13,32 @@ const Gallery = () => {
         setSelectedCategoryAbout(about);
     };
 
-    const filteredImages = selectedCategory === 'All' ? images : images.filter((image) => image.category === selectedCategory);
+    function loadingGallery() {
+        axios.get('http://localhost:3003/gallery')
+            .then((resGallery) => {
+                setGalleryImages(resGallery.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    function loadingCategories() {
+        axios.get('http://localhost:3003/gallery/categories')
+            .then((resCategories) => {
+                setCategories(resCategories.data)
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+
+    useEffect(() => {
+        loadingGallery();
+        loadingCategories();
+    }, []);
+
+    const filteredImages = selectedCategory === 'All' ? galleryImages : galleryImages.filter((image) => image.category === selectedCategory);
 
     return (
         <section className="gallery">
@@ -49,7 +57,7 @@ const Gallery = () => {
 
                         {categories.map((category) => (
                             <button
-                                key={category.id}
+                                key={category._id}
                                 className={`categories__button button ${selectedCategory === category.name ? 'active' : ''}`}
                                 onClick={() => handleCategorySelect(category.name, category.about)}
                             >
@@ -58,8 +66,6 @@ const Gallery = () => {
                         ))}
                     </div>
 
-                    {/* {selectedCategory !== 'All' &&{())} */}
-
                     <div className="categories__about">
                         <p className="categories__about-text">{selectedCategoryAbout}</p>
                     </div>
@@ -67,7 +73,7 @@ const Gallery = () => {
 
                 <div className="gallery__grid gallery-grid">
                     {filteredImages.map((image) => (
-                        <div key={image.id} className="gallery-grid__image-wrapper">
+                        <div key={image._id} className="gallery-grid__image-wrapper">
                             <img className="gallery-grid__image" src={image.url} alt={image.title} />
                             <div className="gallery-grid__image-overlay">
                                 <h3 className="gallery-grid__image-title">{image.title}</h3>

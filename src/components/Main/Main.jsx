@@ -10,10 +10,10 @@ import Contacts from '../Contacts/Contacts'
 import Map from '../Map/Map'
 // import Slider from '../Slider/Slider'
 
-const Main = ({ onClickAbout }) => {
+const Main = ({ onClickAbout, galleryImages }) => {
   return (
     <>
-      <Hero onClickAbout={onClickAbout}/>
+      <Hero onClickAbout={onClickAbout} />
       <Features />
       {/* <Slider /> */}
       <Order />

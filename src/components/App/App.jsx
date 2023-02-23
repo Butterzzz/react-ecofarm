@@ -136,7 +136,11 @@ const App = () => {
               orderCount={orderCount}
             />}
           >
-            <Route index element={<Main onClickAbout={handleVideoPopupClick} />} />
+            <Route index element={
+              <Main
+                onClickAbout={handleVideoPopupClick}
+              />}
+            />
             <Route path="catalog" element={
               <Catalog
                 setOrder={handleAddToOrder}
