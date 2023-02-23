@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Gallery.css';
+import React, { useState } from 'react'
+import './Gallery.css'
 
 const categories = [
     { id: '1', name: 'Виды микрозелени', about: 'Фотографии различных видов микрозелени', },
@@ -34,19 +34,23 @@ const Gallery = () => {
 
     return (
         <section className="gallery">
-            <h2 className="reviews__title section-title">Галерея изображений</h2>
+            <h2 className="gallery__title section-title">Галерея изображений</h2>
 
-            <div className="gallery__container">
-                <div className="categories">
+            <div className="gallery__container container">
+
+                <div className="gallery__categories categories">
                     <div className="categories__container">
-                        <button className={selectedCategory === 'All' ? 'active' : ''} onClick={() => handleCategorySelect('All')}>
+                        <button
+                            className={`categories__button button ${selectedCategory === 'All' ? 'active' : ''}`}
+                            onClick={() => handleCategorySelect('All')}
+                        >
                             Все
                         </button>
 
                         {categories.map((category) => (
                             <button
                                 key={category.id}
-                                className={selectedCategory === category.name ? 'active' : ''}
+                                className={`categories__button button ${selectedCategory === category.name ? 'active' : ''}`}
                                 onClick={() => handleCategorySelect(category.name, category.about)}
                             >
                                 {category.name}
@@ -54,23 +58,24 @@ const Gallery = () => {
                         ))}
                     </div>
 
-                    {selectedCategory !== 'All' && (
-                        <div className="category-about">
-                            <p className="category-about__text">{selectedCategoryAbout}</p>
-                        </div>
-                    )}
+                    {/* {selectedCategory !== 'All' &&{())} */}
+
+                    <div className="categories__about">
+                        <p className="categories__about-text">{selectedCategoryAbout}</p>
+                    </div>
                 </div>
 
-                <div className="image-list">
+                <div className="gallery__grid gallery-grid">
                     {filteredImages.map((image) => (
-                        <div key={image.id} className="image-wrapper">
-                            <img src={image.url} alt={image.title} className="image" />
-                            <div className="image-overlay">
-                                <h3 className="image-title">{image.title}</h3>
+                        <div key={image.id} className="gallery-grid__image-wrapper">
+                            <img className="gallery-grid__image" src={image.url} alt={image.title} />
+                            <div className="gallery-grid__image-overlay">
+                                <h3 className="gallery-grid__image-title">{image.title}</h3>
                             </div>
                         </div>
                     ))}
                 </div>
+
             </div>
         </section>
     );
