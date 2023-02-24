@@ -41,10 +41,10 @@ const Gallery = () => {
     const filteredImages = selectedCategory === 'All' ? galleryImages : galleryImages.filter((image) => image.category === selectedCategory);
 
     return (
-        <section className="gallery">
+        <section className="gallery container">
             <h2 className="gallery__title section-title">Галерея изображений</h2>
 
-            <div className="gallery__container container">
+            <div className="gallery__container">
 
                 <div className="gallery__categories categories">
                     <div className="categories__container">
@@ -74,7 +74,11 @@ const Gallery = () => {
                 <div className="gallery__grid gallery-grid">
                     {filteredImages.map((image) => (
                         <div key={image._id} className="gallery-grid__image-wrapper">
-                            <img className="gallery-grid__image" src={image.url} alt={image.title} />
+                            <img
+                                className="gallery-grid__image"
+                                src={image.url}
+                                alt={image.title}
+                            />
                             <div className="gallery-grid__image-overlay">
                                 <h3 className="gallery-grid__image-title">{image.title}</h3>
                             </div>
