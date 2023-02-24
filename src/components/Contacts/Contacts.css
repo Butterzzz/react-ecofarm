@@ -20,7 +20,7 @@
 
 .contacts__link {
     width: 250px;
-    min-height: 68px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,6 +33,11 @@
     padding: 10px 30px;
     border-radius: var(--border-radius);
     cursor: pointer;
+    transition: var(--transition);
+}
+
+.contacts__link svg {
+    color: currentColor;
 }
 
 .contacts__link p {
@@ -45,10 +50,9 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.contacts__link_phone:hover,
-.contacts__link_phone:hover svg {
+.contacts__link_phone:hover {
     color: var(--main-green);
-    transition: var(--transition);
+    border: 1px solid var(--main-green);
 }
 
 .contacts__link_phone span {
@@ -61,10 +65,9 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-.contacts__link_email:hover,
-.contacts__link_email:hover svg {
+.contacts__link_email:hover {
     color: var(--main-green);
-    transition: var(--transition);
+    border: 1px solid var(--main-green);
 }
 
 .contacts__link_email span {
@@ -76,10 +79,8 @@
     background-color: var(--wa);
 }
 
-.contacts__link_whatsapp:hover,
-.contacts__link_whatsapp:hover svg {
+.contacts__link_whatsapp:hover {
     color: var(--black);
-    transition: var(--transition);
 }
 
 .contacts__link_telegram {
@@ -87,10 +88,8 @@
     background-color: var(--tg);
 }
 
-.contacts__link_telegram:hover,
-.contacts__link_telegram:hover svg {
+.contacts__link_telegram:hover {
     color: var(--black);
-    transition: var(--transition);
 }
 
 .contacts__link-icon {
@@ -125,6 +124,7 @@
 
 .contacts__form-button {
     width: 100%;
+    height: 60px;
     border: none;
     background-color: var(--main-green);
     border-radius: var(--border-radius);

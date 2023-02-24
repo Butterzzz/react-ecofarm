@@ -58,14 +58,14 @@ const Contacts = () => {
 
           <a
             className="contacts__link contacts__link_phone"
-            href="tel:+7 (914) 615-71-99"
+            href="tel:+7 (777) 777-77-77"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Позвонить"
           >
             <FiPhoneForwarded className="contacts__link-icon contacts__link-icon_black" />
             <p>
-              Позвонить<br /><span>+7 (914) 615-71-99</span>
+              Позвонить<br /><span>+7 (777) 777-77-77</span>
             </p>
           </a>
 
@@ -84,7 +84,7 @@ const Contacts = () => {
 
           <a
             className="contacts__link contacts__link_whatsapp"
-            href="https://wa.me/79146157199?text=Здравствуйте!%20Интересует%20ваша%20микрозелень"
+            href="https://wa.me/77777777777?text=Здравствуйте!%20Интересует%20ваша%20микрозелень"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в WhatsApp"
@@ -95,7 +95,7 @@ const Contacts = () => {
 
           <a
             className="contacts__link contacts__link_telegram"
-            href="https://t.me/Above_Everything"
+            href="https://t.me/777_7777777"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Написать в Telegram"
