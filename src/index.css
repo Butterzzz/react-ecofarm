@@ -53,7 +53,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Arian AMU', 'PT Sans', sans-serif;
+  font-family: 'PT Sans', 'Arian AMU', 'Lora', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;

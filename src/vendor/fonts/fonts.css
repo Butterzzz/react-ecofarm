@@ -3,8 +3,10 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(./PTSansRegular.woff2) format('woff2'),
-       url(./PTSansRegular.woff) format('woff');
+  src: local('PT Sans'),
+       local('PTSans-Regular'),
+       url('ptsans.woff2') format('woff2'),
+       url('ptsans.woff') format('woff');
 }
 
 @font-face {
@@ -12,8 +14,10 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url(./PTSansItalic.woff2) format('woff2'),
-       url(./PTSansItalic.woff) format('woff');
+  src: local('PT Sans Italic'),
+       local('PTSans-Italic'),
+       url('ptsansitalic.woff2') format('woff2'),
+       url('ptsansitalic.woff') format('woff');
 }
 
 @font-face {
@@ -21,8 +25,10 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(./PTSansBold.woff2) format('woff2'),
-       url(./PTSansBold.woff) format('woff');
+  src: local('PT Sans Bold'),
+       local('PTSans-Bold'),
+       url('ptsansbold.woff2') format('woff2'),
+       url('ptsansbold.woff') format('woff');
 }
 
 @font-face {
@@ -30,8 +36,10 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url(./PTSansBoldItalic.woff2) format('woff2'),
-       url(./PTSansBoldItalic.woff) format('woff');
+  src: local('PT Sans Bold Italic'),
+       local('PTSans-BoldItalic'),
+       url('ptsansbolditalic.woff2') format('woff2'),
+       url('ptsansbolditalic.woff') format('woff');
 }
 
 
@@ -39,26 +47,95 @@
   font-family: 'Arian AMU';
   font-style: normal;
   font-weight: 400;
-  src: url('./arianamu.woff2') format('woff2');
+  src: local('Arian AMU'),
+       url('arianamu.woff2') format('woff2'),
+       url('arianamu.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Arian AMU';
   font-style: italic;
   font-weight: 400;
-  src: url('./arianamuitalic.woff2') format('woff2');
+  src: local('Arian AMU Italic'),
+       local('ArianAMU-Italic'),
+       url('arianamuitalic.woff2') format('woff2'),
+       url('arianamuitalic.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Arian AMU';
   font-style: normal;
   font-weight: 700;
-  src: url('./arianamubold.woff2') format('woff2');
+  src: local('Arian AMU Bold'),
+       local('ArianAMU-Bold'),
+       url('arianamubold.woff2') format('woff2'),
+       url('arianamubold.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Arian AMU';
   font-style: italic;
   font-weight: 700;
-  src: url('./arianamubolditalic.woff2') format('woff2');
+  src: local('Arian AMU Bold'),
+       local('ArianAMU-Bold'),
+       url('arianamubold.woff2') format('woff2'),
+       url('arianamubold.woff') format('woff');
+}
+
+
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 400;
+	src: url('Lora-Regular.woff2') format('woff2'),
+       url('Lora-Regular.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 400;
+	src: url('Lora-Italic.woff2') format('woff2'),
+       url('Lora-Italic.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 500;
+	src: url('Lora-Medium.woff2') format('woff2'),
+       url('Lora-Medium.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 500;
+	src: url('Lora-MediumItalic.woff2') format('woff2'),
+       url('Lora-MediumItalic.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 600;
+	src: url('Lora-SemiBold.woff2') format('woff2'),
+       url('Lora-SemiBold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 600;
+	src: url('Lora-SemiBoldItalic.woff2') format('woff2'),
+       url('Lora-SemiBoldItalic.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: normal;
+	font-weight: 700;
+	src: url('Lora-Bold.woff2') format('woff2'),
+       url('Lora-Bold.woff') format('woff');
+}
+@font-face {
+	font-family: 'Lora';
+	font-style: italic;
+	font-weight: 700;
+	src: url('Lora-BoldItalic.woff2') format('woff2'),
+       url('Lora-BoldItalic.woff') format('woff');
 }

@@ -37,6 +37,9 @@
 }
 
 .categories__about-text {
+    font-family: 'Lora';
+    font-weight: 400;
+	font-style: italic;
     font-size: 16px;
     line-height: 19px;
     text-align: center;
