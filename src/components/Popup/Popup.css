@@ -50,18 +50,24 @@
 }
 
 .popup__button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    right: -40px;
+    top: -40px;
     border-radius: var(--border-radius);
     border: none;
     cursor: pointer;
 }
 
 .popup__button_type_close {
-    width: 40px;
-    height: 40px;
-    background-color: var(--white);
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    padding: 0;
+}
+
+.popup__button-icon {
+    font-size: 30px;
+    color: var(--white)
 }
 
 .popup__video {
@@ -83,6 +89,10 @@
     .popup__container {
         padding: 40px 30px;
     }
+
+    .popup__button {
+        right: 0;
+    }
 }
 
 @media screen and (max-width: 420px) {
@@ -94,13 +104,5 @@
     .popup__title {
         font-size: 16px;
         line-height: 21px;
-    }
-
-    .popup__button-icon {
-        font-size: 30px;
-    }
-
-    .popup__button_type_close:hover {
-        background-color: transparent;
     }
 }

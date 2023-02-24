@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './Popup.css'
 import { MdOutlineClose } from 'react-icons/md'
 
-const Popup = ({ children, isOpen, onClose }) => {
+const Popup = ({ children, name, isOpen, onClose }) => {
 
     const handleKeyDown = evt => {
         if (evt.key === "Escape") {
@@ -25,12 +25,12 @@ const Popup = ({ children, isOpen, onClose }) => {
     }, []);
 
     return (
-        <div className={`popup popup_type_video ${isOpen && "popup_opened"}`} onClick={handleClose}>
+        <div className={`popup popup_type_${name} ${isOpen && "popup_opened"}`} onClick={handleClose}>
             <div className="popup__container">
                 <div className="popup__top-wrapper">
                     <h2 className="popup__title">Технология выращивания семян микрозелени</h2>
 
-                    <button className="popup__button popup__button_type_close button"
+                    <button className="popup__button popup__button_type_close"
                         aria-label="Закрыть модальное окно"
                         onClick={onClose}>
                         <MdOutlineClose className="popup__button-icon" />

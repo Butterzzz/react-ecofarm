@@ -1,0 +1,43 @@
+  .popup_type_photo-view {
+    background-color: rgba(0, 0, 0, .9);
+  }
+
+  .popup__image-container {
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+
+  .popup__figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  .popup__image {
+    display: block;
+    max-width: 75vw;
+    max-height: 75vh;
+    padding: 0;
+    margin: 0;
+  }
+
+  .popup__image-caption {
+    max-width: 292px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--white);
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+    padding: 10px 0 0;
+  }
+
+  @media screen and (max-width: 420px) {
+    .popup__image-caption {
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }

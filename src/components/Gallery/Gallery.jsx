@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react'
 import './Gallery.css'
 import axios from 'axios'
 
-const Gallery = () => {
+const Gallery = ({ onClickImage }) => {
     const [galleryImages, setGalleryImages] = useState([]);
     const [categories, setCategories] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [selectedCategoryAbout, setSelectedCategoryAbout] = useState('');
 
-    const handleCategorySelect = (name, about) => {
+    function handleClick(image) {
+        onClickImage(image);
+    }
+
+    function handleCategorySelect(name, about) {
         setSelectedCategory(name);
         setSelectedCategoryAbout(about);
     };
@@ -78,6 +82,7 @@ const Gallery = () => {
                                 className="gallery-grid__image"
                                 src={image.url}
                                 alt={image.title}
+                                onClick={() => handleClick(image)}
                             />
                             <div className="gallery-grid__image-overlay">
                                 <h3 className="gallery-grid__image-title">{image.title}</h3>

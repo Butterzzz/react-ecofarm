@@ -10,7 +10,7 @@ import Contacts from '../Contacts/Contacts'
 import Map from '../Map/Map'
 // import Slider from '../Slider/Slider'
 
-const Main = ({ onClickAbout, galleryImages }) => {
+const Main = ({ onClickAbout, onClickImage }) => {
   return (
     <>
       <Hero onClickAbout={onClickAbout} />
@@ -19,7 +19,9 @@ const Main = ({ onClickAbout, galleryImages }) => {
       <Order />
       <Blog />
       <Reviews />
-      <Gallery />
+      <Gallery
+        onClickImage={onClickImage}
+      />
       <Contacts />
       {/* <Map /> */}
     </>

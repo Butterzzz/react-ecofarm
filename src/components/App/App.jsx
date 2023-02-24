@@ -13,6 +13,7 @@ import NotFoundPage from '../NotFoundPage/NotFoundPage'
 import Popup from '../Popup/Popup'
 import Drawer from '../Drawer/Drawer'
 import Toast from '../Toast/Toast'
+import ImagePopup from '../ImagePopup/ImagePopup';
 import { IconContext } from 'react-icons'
 
 const App = () => {
@@ -21,6 +22,11 @@ const App = () => {
   const [order, setOrder] = useState(loadCartFromLocalStorage()); // Корзина
   const [isVisibleToast, setIsVisibleToast] = useState(false); // Всплывающая уведомляшка
   const [orderCount, setOrderCount] = useState(0); // Количество товаров в корзине для бейджа
+  const [selectedCard, setSelectedCard] = useState(null);
+
+  function handleCardClick(image) {
+    setSelectedCard(image);
+  }
 
   useEffect(() => {
     let count = 0;
@@ -50,6 +56,7 @@ const App = () => {
     scrollEnable();
     setIsDrawerOpen(false);
     setIsVideoPopupOpen(false);
+    setSelectedCard(null);
   }
 
   // Добавление товара в корзину
@@ -139,6 +146,7 @@ const App = () => {
             <Route index element={
               <Main
                 onClickAbout={handleVideoPopupClick}
+                onClickImage={handleCardClick}
               />}
             />
             <Route path="catalog" element={
@@ -171,6 +179,7 @@ const App = () => {
         />
 
         <Popup
+          name={'video-view'}
           isOpen={isVideoPopupOpen}
           onClose={closeAllPopups}>
           {/* <iframe
@@ -186,6 +195,12 @@ const App = () => {
 
         <Toast
           isVisibleToast={isVisibleToast}
+        />
+
+        <ImagePopup
+          name={'photo-view'}
+          image={selectedCard}
+          onClose={closeAllPopups}
         />
 
       </IconContext.Provider>
