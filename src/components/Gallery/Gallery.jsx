@@ -71,7 +71,7 @@ const Gallery = ({ onClickImage }) => {
                     </div>
 
                     <div className="categories__about">
-                        <p className="categories__about-text">{selectedCategoryAbout}</p>
+                        <p className="categories__about-text">{`${selectedCategory === 'All' ? 'Все фотографии' : `${selectedCategoryAbout}`}`}</p>
                     </div>
                 </div>
 
@@ -80,7 +80,7 @@ const Gallery = ({ onClickImage }) => {
                         <div key={image._id} className="gallery-grid__image-wrapper">
                             <img
                                 className="gallery-grid__image"
-                                src={image.url}
+                                src={image.thumbnail}
                                 alt={image.title}
                                 onClick={() => handleClick(image)}
                             />

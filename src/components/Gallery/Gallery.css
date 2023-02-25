@@ -69,6 +69,10 @@
     height: auto;
 }
 
+.gallery-grid__image:hover {
+    cursor: zoom-in;
+}
+
 .gallery-grid__image-overlay {
     opacity: 0;
     position: absolute;

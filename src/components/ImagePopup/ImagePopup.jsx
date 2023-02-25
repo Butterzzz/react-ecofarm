@@ -15,7 +15,7 @@ const ImagePopup = ({ name, image, onClose }) => {
             <div className="popup__image-container">
 
                 <figure className="popup__figure">
-                    <img className="popup__image" src={image && image.url} alt={image && image.title} />
+                    <img className="popup__image" src={image && image.image} alt={image && image.title} />
                     <figcaption className="popup__image-caption">{image && image.title}</figcaption>
                 </figure>
 
