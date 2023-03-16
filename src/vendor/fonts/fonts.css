@@ -16,8 +16,8 @@
   font-display: swap;
   src: local('PT Sans Italic'),
        local('PTSans-Italic'),
-       url('ptsansitalic.woff2') format('woff2'),
-       url('ptsansitalic.woff') format('woff');
+       url('PTSansItalic.woff2') format('woff2'),
+       url('PTSansItalic.woff') format('woff');
 }
 
 @font-face {
@@ -27,8 +27,8 @@
   font-display: swap;
   src: local('PT Sans Bold'),
        local('PTSans-Bold'),
-       url('ptsansbold.woff2') format('woff2'),
-       url('ptsansbold.woff') format('woff');
+       url('PTSansBold.woff2') format('woff2'),
+       url('PTSansBold.woff') format('woff');
 }
 
 @font-face {
@@ -38,8 +38,8 @@
   font-display: swap;
   src: local('PT Sans Bold Italic'),
        local('PTSans-BoldItalic'),
-       url('ptsansbolditalic.woff2') format('woff2'),
-       url('ptsansbolditalic.woff') format('woff');
+       url('PTSansBoldItalic.woff2') format('woff2'),
+       url('PTSansBoldItalic.woff') format('woff');
 }
 
 
