@@ -4,7 +4,7 @@
   font-weight: 400;
   font-display: swap;
   src: local('PT Sans'),
-       local('PTSans-Regular'),
+       local('ptsans-Regular'),
        url('ptsans.woff2') format('woff2'),
        url('ptsans.woff') format('woff');
 }
@@ -15,9 +15,9 @@
   font-weight: 400;
   font-display: swap;
   src: local('PT Sans Italic'),
-       local('PTSans-Italic'),
-       url('PTSansItalic.woff2') format('woff2'),
-       url('PTSansItalic.woff') format('woff');
+       local('ptsans-Italic'),
+       url('ptsansitalic.woff2') format('woff2'),
+       url('ptsansitalic.woff') format('woff');
 }
 
 @font-face {
@@ -26,9 +26,9 @@
   font-weight: 700;
   font-display: swap;
   src: local('PT Sans Bold'),
-       local('PTSans-Bold'),
-       url('PTSansBold.woff2') format('woff2'),
-       url('PTSansBold.woff') format('woff');
+       local('ptsans-Bold'),
+       url('ptsansbold.woff2') format('woff2'),
+       url('ptsansbold.woff') format('woff');
 }
 
 @font-face {
@@ -37,9 +37,9 @@
   font-weight: 700;
   font-display: swap;
   src: local('PT Sans Bold Italic'),
-       local('PTSans-BoldItalic'),
-       url('PTSansBoldItalic.woff2') format('woff2'),
-       url('PTSansBoldItalic.woff') format('woff');
+       local('ptsans-BoldItalic'),
+       url('ptsansbolditalic.woff2') format('woff2'),
+       url('ptsansbolditalic.woff') format('woff');
 }
 
 
