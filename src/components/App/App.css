@@ -1,0 +1,20 @@
+.page {
+    min-width: 320px;
+    max-width: 1280px;
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    font-family: 'Roboto', 'sans-serif';
+    color: #1a1a1a;
+    background: #f9f9f9;
+    font-size: 15px;
+    line-height: 1.4;
+}
