@@ -2,6 +2,30 @@
     padding: 100px 50px;
 }
 
+.order__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 20px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.order__caption {
+    font-size: 20px;
+    line-height: 26px;
+    color: var(--black);
+    margin: 0 0 10px 0;
+}
+
+.order__text {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: 400;
+    color: var(--black-06);
+    margin: 0;
+}
+
 @media screen and (max-width: 768px) {
     .order {
         padding: 100px 30px;
